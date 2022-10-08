@@ -4,13 +4,13 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/",{
             templateUrl:"home.html"
         })
-        .when("/Product",{
-            templateUrl:"product.html"
+        .when("/Car",{
+            templateUrl:"car.html"
+        })
+        .when("/CarIn",{
+            templateUrl:"CarInsurance.html"
         })
         .when("/About",{
-            templateUrl:"about.html"
-        })
-        .when("/Contact",{
             templateUrl:"contact.html"
         });
     });

@@ -2,3 +2,107 @@
     box-sizing: border-box;
     margin: 0;
 }
+@media (min-width: 991.98px){
+    .menu{ 
+        
+        width: 60%;    
+        padding: 0 20px;
+        height: 55px;        
+        background: #FFFFFF;
+        box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 50px;
+        }
+    .myJustify{
+        width: 100%;
+        justify-content:space-around;
+    }
+    .myList{
+        
+        color: black;
+        text-decoration: none;
+        padding: 10px;
+    }
+    .dropdown-item:hover{
+        background-color: black;
+        color: white;
+    }
+    .myList:hover, .myList:focus {
+        padding: 10px;
+        background-color: black;
+        color: #FFFFFF;
+    }
+    .myList:active{
+        padding: 10px;
+        background-color: black;
+        color: #FFFFFF;
+    }
+
+    .myPosition{        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+    
+    }
+    @media (max-width: 991.98px){
+        #avatar1{
+        display: none;
+    }
+    .myList{
+        color: black;
+        text-decoration: none;
+        padding: 10px;
+    }
+    }
+    nav{
+        position: fixed;
+        
+    }
+    
+    .logo{
+        float: left;
+        background-color: bisque;
+        width: 200px;
+        
+    }
+    
+   
+    #dropdown-menu{
+        margin-top: 10px;
+    }
+    #avatar1{
+        position: relative;
+        width: 150px;
+        height: auto;
+        display: flex;
+        margin-right: 20px;
+        float: right;
+        display: show;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50px;
+        justify-content: center;
+        border: 0;
+        background-color: unset;
+    }
+    #avatar1:hover{
+        color: #FF9C29;
+    }
+    #avatar1:active{
+        color: #FF9C29;
+    }
+
+    
+    .clear{
+        clear: both;
+    }
+    #avatar1 a{
+        
+        text-decoration: none;
+        color: inherit;
+        
+    }
+    #avatar1 .bi{ 
+        margin-right: 10px;
+    }
