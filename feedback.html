@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <script>
+        function kiemtra() {
+              var star = document.querySelector('input[name="rate"]:checked').value;
+              var sMess = document.getElementById("txtmess").value;
+              var sName = document.getElementById("txtname").value;
+              var sMail = document.getElementById("txtmail").value;
+              var sAge = document.getElementById("txtage").value;
+              var sPhone = document.getElementById("txtphone").value;
+              var rePhone = /^\d{8,12}$/
+              var reMail = /^\w+[@]\w+[.]\w+[.]\w+$/;
+              
+              if(sName == ""){
+                alert("Full name field can't left blank!")
+                return false;
+              }
+             
+              if(sAge == ""){
+                alert("Address field can't left blank!")
+                return false;
+              }
+              if(!reMail.test(sMail)){
+                alert("Mail field can't left blank!");
+                document.getElementById("txtmail")
+                return false;
+                }
+              
+                if(!rePhone.test(sPhone)){
+                  alert("Phone field can't left blank!");
+                  document.getElementById("txtphone")
+                  return false;
+                  }
+                 
+                binhluan();
+            }
+           function binhluan() {
+            var obj = {
+                table: []
+             };
+            var fs = require('fs');
+            console.log(fs);
+            fs.readFile('comments.json', 'utf8', function readFileCallback(err, data){
+                if (err){
+                    throw err;
+                } else {
+                    obj = JSON.parse(data); 
+                    obj.table.push({
+                        "name": document.getElementById("txtname").value,
+                        "age":document.getElementById("txtage").value, 
+                        "ratting": document.querySelector('input[name="rate"]:checked').value, 
+                        "comment": document.getElementById("txtmess").value}); 
+                    json = JSON.stringify(obj); 
+                    fs.writeFile('comments.json', json, 'utf8', callback);
+                }
+            });
+        }
+    </script>
+    <style>
+        .rate {
+            float: left;
+            height: 46px;
+            padding: 0 10px;
+        }
+        .rate:not(:checked) > input {
+            position:absolute;
+            top:-9999px;
+        }
+        .rate:not(:checked) > label {
+            float:right;
+            width:1em;
+            overflow:hidden;
+            white-space:nowrap;
+            cursor:pointer;
+            font-size:30px;
+            color:rgba(0, 0, 0, 0.302);
+        }
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
+        .rate > input:checked ~ label {
+            color: red;    
+        }
+        .rate:not(:checked) > label:hover,
+        .rate:not(:checked) > label:hover ~ label {
+            color: red;  
+        }
+        .rate > input:checked + label:hover,
+        .rate > input:checked + label:hover ~ label,
+        .rate > input:checked ~ label:hover,
+        .rate > input:checked ~ label:hover ~ label,
+        .rate > label:hover ~ input:checked ~ label {
+            color: red;
+        }
+        
+        #pick1{
+            position: absolute;
+            top: 250px;
+            width: 25%;
+            left: 450px;         
+        }
+        #pick2{
+            position: absolute;
+            top: 250px;
+            left: 1050px;
+            width: 25%;     
+        }
+        #pick3{
+            position: absolute;
+            top: 400px;
+            width: 25%;
+            left: 450px;    
+        }
+        #pick4{
+            position: absolute;
+            top: 400px;
+            left: 1050px;
+            width: 25%;        
+        }
+        #pick5{
+            position: absolute;
+            top: 630px;
+            width: 1000px;
+            left: 460px;     
+        }
+        .pick6{
+            width: 150px;
+            position: relative;
+            top: 840px;
+            background-color: #FF9C29;
+            color: white;
+            left: 867px;
+            height: 30px;
+            border-radius: 7px;
+            
+        }
+        #pick7{
+            position: absolute;
+            top: 540px;
+            left: 460px;
+            width: 20%;
+            font-size: 20pt;  
+        }
+        #pick8{
+            position: absolute;
+            top: 170px;
+            left: 850px;
+            font-size:14pt ;      
+        }
+        #pick9{
+            width: 100%;
+            left: 1000px;
+        }
+        .input_text{
+            width: 100%;
+            height: 30px;
+            background-color: #D9D9D9;
+            border-radius: 7px ;
+            border: 1px solid #D9D9D9;
+            padding: 10px;
+            box-shadow: 1px 3px;
+        }
+        .input_text1{
+            width: 100%;
+            height: 400px;
+            font-size: 15pt;
+            background-color: #D9D9D9;
+            border-radius: 7px;
+            border: 1px solid #D9D9D9;
+            padding: 10px;
+            box-shadow: 1px 3px;
+        }
+        .text{
+            font-size: 70pt;
+            
+        }
+        .b{
+            
+            background: url(blue.jpg);
+        }
+        .stat{
+            color: white;
+        }
+        .text1{
+            color: rgba(0, 255, 255, 0.929);
+        }
+        
+    </style>
+</head>
+<body>
+   <div>
+    <form action="">
+        name: <br>
+        ★★★★★
+        
+    </form>
+   </div>
+   <div align="center">
+     <h1 class="text">Feedback form</h1> <br>
+</div>
+<div id="pick8">Please write your feedback below</div>
+
+
+    
+    <form action="" onsubmit="return kiemtra()">
+   <div id="pick1"><div class=""> Full name*:</div><input class="input_text" id="txtname" placeholder="Enter full name" type="text"></div>
+   <div id="pick2"><div class=""> Phone*:</div> <input class="input_text" id="txtphone" placeholder="Enter phone" type="text"></div>
+   <div id="pick3"><div class=""> Age*:</div> <input class="input_text" id="txtage" placeholder="Enter age" type="text"></div>
+   <div id="pick4"><div class=""> Email*: </div> <input class="input_text" id="txtmail" placeholder="Enter email" type="text"></div>
+   <div id="pick5"><div class=""> Message*:</div> <textarea class="input_text1" id="txtmess" placeholder="Enter message" rows="5" cols="500"></textarea></div>
+   <div><input type="submit" class="pick6"></div>
+     
+     <div id="pick7">
+        <div> What do you thinks of sabel?</div> 
+        <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+        </div>
+    </form>
+
+</body>
+</html>
