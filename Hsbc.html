@@ -160,7 +160,7 @@ Option 8: Option 1 + Non-depreciation for spare parts + Repair at optional garag
     <script>
         var app = angular.module("myApp",['ngRoute'])
         app.controller("Ctr",function($scope,$http){
-            $http.get("data.json").then(function(response){
+            $http.get("./asset/data1.json").then(function(response){
                 $scope.food = response.data.menu;
             })            
             $scope.removeItem = function (x) {    

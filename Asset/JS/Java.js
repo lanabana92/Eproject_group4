@@ -1,14 +1,14 @@
 var app = angular.module('myApp',['ngRoute'])
     app.config(function($routeProvider){
         $routeProvider
-        .when("/",{
+        .when("/home",{
             templateUrl:"home.html"
         })
         .when("/Car",{
             templateUrl:"car.html"
         })
-        .when("/CarIn",{
-            templateUrl:"CarInsurance.html"
+        .when("/hsbc",{
+            templateUrl:"Hsbc.html"
         })
         .when("/About",{
             templateUrl:"contact.html"
