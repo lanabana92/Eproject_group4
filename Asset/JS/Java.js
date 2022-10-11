@@ -16,12 +16,8 @@ var app = angular.module('myApp',['ngRoute'])
     });
 
     app.controller("Ctr1",function($scope,$http){
-        $http.get("Asset/data1.json").then(function(response){
-
-            $scope.food = response.data.menu;
-            alert($scope.food);
+        $http.get("data1.json").then(function(response){
+            $scope.car = response.data1.menu;            
         })            
-        $scope.removeItem = function (x) {    
-        $scope.food.splice(x, 1);   
-        }  
+        
     })

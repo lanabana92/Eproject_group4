@@ -81,7 +81,8 @@ color: #000000;
 
 
 </style>
-<div class="the1">
+<div >
+  <div class="the1">
    
     <div class="text">Are you paying too much for your car insurance?</div>
     <div class="text2">Save more. Great insurance at affordable prices</div>
@@ -130,16 +131,11 @@ Option 8: Option 1 + Non-depreciation for spare parts + Repair at optional garag
                 <th>Option 8</th>    
                         
             </tr>
-            <tr >
-                <td>Car usage under 3 years</td>
+            <tr ng-repeat="list in car">
                 <td>{{list.name}}</td>
                 <td>{{list.price}}</td>
                 <td>{{list.dob}}</td>
                 <td>{{list.id}}</td>
-                <td>{{list.name}}</td>
-                <td>{{list.price}}</td>
-                <td>{{list.dob}}</td>
-                <td>{{list.dob}}</td>
             </tr>
         </table>
       </div>
@@ -153,3 +149,5 @@ Option 8: Option 1 + Non-depreciation for spare parts + Repair at optional garag
       </div>
     </div>
   </div>
+
+</div>
