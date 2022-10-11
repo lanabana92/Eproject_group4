@@ -14,3 +14,14 @@ var app = angular.module('myApp',['ngRoute'])
             templateUrl:"contact.html"
         });
     });
+
+    app.controller("Ctr1",function($scope,$http){
+        $http.get("Asset/data1.json").then(function(response){
+
+            $scope.food = response.data.menu;
+            alert($scope.food);
+        })            
+        $scope.removeItem = function (x) {    
+        $scope.food.splice(x, 1);   
+        }  
+    })
