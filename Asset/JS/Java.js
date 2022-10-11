@@ -7,8 +7,8 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/Car",{
             templateUrl:"car.html"
         })
-        .when("/CarIn",{
-            templateUrl:"CarInsurance.html"
+        .when("/hsbc",{
+            templateUrl:"Hsbc.html"
         })
         .when("/About",{
             templateUrl:"contact.html"
