@@ -9,6 +9,10 @@ background-size: cover;
 .the2{
     padding: 70px 40px 30px 80px;
 }
+.text0{
+
+    text-align: center;
+}
 .text{
     width: 500px;
     height: 20px;
@@ -37,8 +41,7 @@ color: #000000;
 .text3{
     width: 300px;
     height: 35px;
-    margin-left: 500px;
-    margin-top: 10px;
+    text-align: center;
     font-family: 'Inter';
     font-style: italic;
     font-weight: 600;
@@ -46,11 +49,13 @@ color: #000000;
 
 color: #000000;
 }
+#myDiv0{
+    margin-top: 30px;
+}
 .hr1{
     width: 350px;
-    margin-left: 450px;
-    margin-top: 15px;
     background-color: #d47810;
+    margin: auto;
 }
 
 .option{
@@ -185,6 +190,18 @@ line-height: 16px;
     width: 370px;
     text-align: center;
 }
+.h44{
+    font-family: 'Inter';
+font-style: italic;
+font-weight: 600;
+font-size: 30px;
+line-height: 29px;
+
+color: #000000;
+}
+.icon{
+    margin-top: 9px;
+}
 </style>
 <div class="the1">
    <div class="the2">
@@ -198,15 +215,20 @@ line-height: 16px;
                   <li><a class="dropdown-item" href="#!Car2">Above 9 - Seaters</a></li>
                   <li><a class="dropdown-item" href="#">Luxury Car</a></li>
                 </ul>
-              </div>
-   </div>
-   
+            </div>
+    </div>
 </div>
-<div class="text3">Package offering</div>
-<div><hr class="hr1" style="height: 5px;"></div>
+   <div  class="container-fluid" id="myDiv0">
+    <div class="row">
+        <div class="col-md-2 "></div>
+
+<div class="text0">
+    <h4 class="h44">Package offering</h4>
+   <h3> <hr class="hr1" style="height: 5px;"></h3>
+</div>
 
 <div class="option">
-    <b> Option 1:</b> Basic premium rate <br>
+    <b>Option 1:</b> Basic premium rate <br>
     <b>Option 2:</b> Option 1 + Non-depreciation for spare parts <br>
     <b>Option 3:</b> Option 1 + Repair at optional garage <br>
     <b>Option 4:</b>Option 1 + Flooded automobile <br>
@@ -531,14 +553,18 @@ line-height: 16px;
     <h6><i class="fa-sharp fa-solid fa-check"></i>  Fast and convenient claim service</h6><br></div>
   </div>
   <div class="text7">
-    <i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i>  Things you need to know
+    <i class="fa-solid fa-share icon"></i>    Things you need to know
   </div>
   <div class="text8">
-    <h6><i class="fa-solid fa-download"> </i>  Policy wording of Car insurance (Physical damage) (PDF, 1.5MB)</h6><br>
-    <h6><i class="fa-solid fa-download"> </i>  Policy wording of Insurance for driver and passengers (PDF, 2.2MB)</h6><br>
-    <h6><i class="fa-solid fa-download"> </i>  Third Party Liability Insurance (PDF, 129KB)</h6><br>
-    <h6><i class="fa-solid fa-download"> </i>  Policy wording of Third party liability insurance (PDF, 3.3MB)</h6>
+    <a href="Asset/Car insurance changes_Policy wordings_Physical damage.EN.pdf"><h6><i class="fa-solid fa-download"> </i>  Policy wording of Car insurance (Physical damage) (PDF, 1.5MB)</h6><br></a>
+    <a href="Asset/Car insurance changes_Policy wordings_Insurance for driver and passengers.EN.pdf"><h6><i class="fa-solid fa-download"> </i>  Policy wording of Insurance for driver and passengers (PDF, 2.2MB)</h6><br></a>
+    <a href="Asset/Car insurance changes_Premium of Third Party Liability and Accidents.EN.pdf"><h6><i class="fa-solid fa-download"> </i>  Third Party Liability Insurance (PDF, 129KB)</h6><br></a>
+    <a href="Asset/Car insurance changes_Policy wordings_Third party liability insurance.EN.pdf"><h6><i class="fa-solid fa-download"> </i>  Policy wording of Third party liability insurance (PDF, 3.3MB)</h6></a>
   </div>
+
+</div>
+</div>
+
 <script>
     $(document).ready(function(){
     $('#myselection').on('change', function(){
