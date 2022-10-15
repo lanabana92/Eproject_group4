@@ -150,6 +150,7 @@ display: flex;
 .text8{
 margin-top: 15px;
 margin-left: 80px;
+margin-bottom: 50px;
 font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
@@ -189,8 +190,15 @@ line-height: 16px;
    <div class="the2">
         <div class="text">Are you paying too much for your car insurance?</div>
         <div class="text2"><i>Save more. Great insurance at affordable prices</i>  </div><br>
-        <button class="text1">Quote for yourself</button>
-        
+          
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Quote for yourself</button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#!Car">Under 9 - Seaters</a></li>
+                  <li><a class="dropdown-item" href="#!Car2">Above 9 - Seaters</a></li>
+                  <li><a class="dropdown-item" href="#">Luxury Car</a></li>
+                </ul>
+              </div>
    </div>
    
 </div>
