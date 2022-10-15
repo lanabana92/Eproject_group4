@@ -7,6 +7,10 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/Car",{
             templateUrl:"car.html"
         })
+
+        .when("/Car2",{
+            templateUrl:"car2.html"
+        })
         .when("/hsbc",{
             templateUrl:"Hsbc.html"
         })
@@ -17,13 +21,6 @@ var app = angular.module('myApp',['ngRoute'])
 
     app.controller("Ctr1",function($scope,$http){
         $http.get("data1.json").then(function(response){
-<<<<<<< HEAD
             $scope.car = response.data1.menu;            
         })            
-        
-=======
-
-            $scope.food = response.data.menu;
-        })            
->>>>>>> f78f4a2fce0b71c9e253fc194707aa28a5f1d355
     })

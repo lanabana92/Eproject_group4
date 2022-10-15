@@ -110,3 +110,99 @@
         width: 100%;
         height:125.690px;
     }
+    /* under 9 seater page */
+
+    #carQuoteContent{
+    
+        background-image: url(../img/Carbackground1.jpg);
+        background-size: cover;
+    }
+    .text{
+        
+    }
+    .quoteBox{
+        
+    
+        padding: 50px;
+        width: 450px;
+        
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+    }  
+    
+    .contentBox1{
+        
+        width: 560px;
+        height: 671px;
+        padding: 20px;
+        margin-left: 50px;
+    
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+    }
+    .outer{
+        height: 100%;
+        
+        /* background-color: aqua; */
+    }
+    .mySelector1{
+        border: 0;
+        border-bottom: 1px solid #65A3FF;
+        background-color: transparent;
+        width: 100%;
+    }
+    
+    .mySelector2{
+        border: 0;
+        border-bottom: 1px solid #65A3FF;
+        background-color: transparent;
+        width: 20%;
+        text-align: center;
+    }
+    .mySubmit1{
+       
+        margin-top: 20px;
+        padding: 5px 10px!important;
+    }
+    .myTable1{
+        margin-top: 100px!important;
+        margin-bottom: 100px;
+    }
+    
+    .tab2{
+        background-color: white;
+        padding: 10px
+    }
+    .myBanner1{
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    /* above 9 seater page */
+    #carQuoteContent2{
+    
+        background-image: url(../img/ford.jpg);
+        background-size: cover;
+    }
+    
+    .quoteBox2{
+        
+    
+        padding: 50px;
+        width: 450px;
+        
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+    }  
+    
+    .contentBox3{
+        
+        width: 560px;
+        height: 671px;
+        padding: 20px;
+        margin-left: 50px;
+    
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+        
+    }
+    /* Luxary car */
