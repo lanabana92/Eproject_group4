@@ -39,9 +39,9 @@
                     <ul id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!Car">Under 9-seaters</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="">Above 9-seaters</a></li>
+                    <li><a class="dropdown-item" href="#!Car2">Above 9-seaters</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#!Car2">Luxury car</a></li>
+                    <li><a class="dropdown-item" href="">Luxury car</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -89,34 +89,6 @@
     <div ng-view>
         
     </div>  
-    <script>var app = angular.module('myApp',['ngRoute'])
-        app.config(function($routeProvider){
-            $routeProvider
-            .when("/home",{
-                templateUrl:"home.html"
-            })
-            .when("/Car",{
-                templateUrl:"car.html"
-            })
-            .when("/hsbc",{
-                templateUrl:"Hsbc.html"
-            })
-            .when("/About",{
-                templateUrl:"contact.html"
-            });
-        });
-        app.controller("Ctr",function($scope,$http){
-            $http.get("data.json").then(function(response){
-                $scope.car1 = response.data.menu1;
-                $scope.car2 = response.data.menu2;
-                $scope.car3 = response.data.menu3;
-                $scope.car4 = response.data.menu4;
-                $scope.car5 = response.data.menu5;
-                $scope.car6 = response.data.menu6;
-                $scope.car7 = response.data.menu7;
-                $scope.car8 = response.data.menu8;
-                $scope.car9 = response.data.menu9;
-            })            
-        })</script>
+    
 </body>
 </html>
