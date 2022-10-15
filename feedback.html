@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Document</title>
+    <link rel="stylesheet" href="./Asset/CSS/style.css">
+    <script src="./Asset/JS/Java.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="./Asset/JS/Java.js"></script>
     <script>
         function kiemtra() {
               var star = document.querySelector('input[name="rate"]:checked').value;
@@ -80,8 +87,7 @@
             cursor:pointer;
             font-size:30px;
             color:rgba(0, 0, 0, 0.302);
-        }
-        .rate:not(:checked) > label:before {
+        }.rate:not(:checked) > label:before {
             content: '★ ';
         }
         .rate > input:checked ~ label {
@@ -100,38 +106,38 @@
         }
         
         #pick1{
-            position: absolute;
+            
             top: 250px;
             width: 25%;
             left: 450px;         
         }
         #pick2{
-            position: absolute;
+            
             top: 250px;
             left: 1050px;
             width: 25%;     
         }
         #pick3{
-            position: absolute;
+        
             top: 400px;
             width: 25%;
             left: 450px;    
         }
         #pick4{
-            position: absolute;
+         
             top: 400px;
             left: 1050px;
             width: 25%;        
         }
         #pick5{
-            position: absolute;
+           
             top: 630px;
             width: 1000px;
             left: 460px;     
         }
         .pick6{
             width: 150px;
-            position: relative;
+         
             top: 840px;
             background-color: #FF9C29;
             color: white;
@@ -141,16 +147,14 @@
             
         }
         #pick7{
-            position: absolute;
-            top: 540px;
-            left: 460px;
-            width: 20%;
+           
+       
+            left: 0%;
             font-size: 20pt;  
         }
         #pick8{
-            position: absolute;
-            top: 170px;
-            left: 850px;
+           
+            text-align: center;
             font-size:14pt ;      
         }
         #pick9{
@@ -177,7 +181,7 @@
             box-shadow: 1px 3px;
         }
         .text{
-            font-size: 70pt;
+            font-size: 60pt;
             
         }
         .b{
@@ -190,47 +194,299 @@
         .text1{
             color: rgba(0, 255, 255, 0.929);
         }
+        #div1{
+            display: inline;
+        }
+        #div2{
+            display: inline-block;
+        }
+        .myDiv{
+            width: 100%;
+            margin-bottom: 1px;
+        }
+        .comment{
+            width: 50%;
+            font-size: 40px;
+        }
+        .txtname{
+            color: #FF9C29;
+        }
+        .txtMessage{
+            text-align: left;
+            box-sizing: border-box;
+        }
+     
+            
+    </style>
+    <style>
+        .rate {
+            float: left;
+            height: 46px;
+            padding: 0 10px;
+        }
+        .rate:not(:checked) > input {
+            position:absolute;
+            top:-9999px;
+        }
+        .rate:not(:checked) > label {
+            float:right;
+            width:1em;
+            overflow:hidden;
+            white-space:nowrap;
+            cursor:pointer;
+            font-size:30px;
+            color:rgba(0, 0, 0, 0.302);
+        }
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
+        .rate > input:checked ~ label {
+            color: red;    
+        }
+        .rate:not(:checked) > label:hover,
+        .rate:not(:checked) > label:hover ~ label {
+            color: red;  
+        }
+        .rate > input:checked + label:hover,
+        .rate > input:checked + label:hover ~ label,
+        .rate > input:checked ~ label:hover,
+        .rate > input:checked ~ label:hover ~ label,
+        .rate > label:hover ~ input:checked ~ label {
+            color: red;
+        }
+
+        .rateComment {
+            float: left;
+            height: 46px;
+            padding: 0 10px;
+        }
+        .rateComment:not(:checked) > input {
+            position:absolute;
+            top:-9999px;
+        }
+        .rateComment:not(:checked) > label {
+            float:right;
+            width:1em;
+            overflow:hidden;
+            white-space:nowrap;
+            cursor:pointer;
+            font-size:30px;
+            color:rgba(0, 0, 0, 0.302);
+        }
+        .rateComment:not(:checked) > label:before {
+            content: '★ ';
+        }
+        .rateComment > input:checked ~ label {
+            color: red;    
+        }
+        .rateComment > input:checked + label:hover,
+        .rateComment > input:checked + label:hover ~ label,
+        .rateComment > input:checked ~ label:hover,
+        .rateComment > input:checked ~ label:hover ~ label,
+        .rateComment > label:hover ~ input:checked ~ label {
+            color: red;
+        }
+        .inputtext{
+            width: 100%;
+            height: 30px;
+            background-color: #D9D9D9;
+            border-radius: 7px ;
+            border: 1px solid #D9D9D9;
+            padding: 10px;
+            box-shadow: 1px 3px;
+        }
+        .myTable{
+            width: 100%;
+        }
+        .phone1{
+            margin-left: 40px;
+        }
         
+    </style>
+    <style>
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto;
+          margin-left: 10px;
+          margin-top: 20px;
+          margin-right: 100px;
+          padding: 10px;
+        }
+        .grid-item {
+         
+        
+          padding: 20px;
+          font-size: 30px;
+          text-align: left;
+        }
+        .grid-item1{
+            width: 100%;
+            box-shadow: #D9D9D9;
+            margin-right: 100px;
+  
+
+        }
+        .grid-item2{
+            width: 1000px;
+
+        }
+        .div10{
+            background-color: #D9D9D9;
+            border: 1px;
+            box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.302);
+            font-size: 36px;
+        }
     </style>
 </head>
 <body>
-   <div>
-    <form action="">
-        name: <br>
-        ★★★★★
-        
-    </form>
-   </div>
-   <div align="center">
-     <h1 class="text">Feedback form</h1> <br>
-</div>
-<div id="pick8">Please write your feedback below</div>
 
+    <div class="grid-container">
+        <div class="grid-item1">
+            <div class="myDiv">
 
-    
-    <form action="" onsubmit="return kiemtra()">
-   <div id="pick1"><div class=""> Full name*:</div><input class="input_text" id="txtname" placeholder="Enter full name" type="text"></div>
-   <div id="pick2"><div class=""> Phone*:</div> <input class="input_text" id="txtphone" placeholder="Enter phone" type="text"></div>
-   <div id="pick3"><div class=""> Age*:</div> <input class="input_text" id="txtage" placeholder="Enter age" type="text"></div>
-   <div id="pick4"><div class=""> Email*: </div> <input class="input_text" id="txtmail" placeholder="Enter email" type="text"></div>
-   <div id="pick5"><div class=""> Message*:</div> <textarea class="input_text1" id="txtmess" placeholder="Enter message" rows="5" cols="500"></textarea></div>
-   <div><input type="submit" class="pick6"></div>
-     
-     <div id="pick7">
-        <div> What do you thinks of sabel?</div> 
-        <div class="rate">
-            <input type="radio" id="star5" name="rate" value="5" />
-            <label for="star5" title="text">5 stars</label>
-            <input type="radio" id="star4" name="rate" value="4" />
-            <label for="star4" title="text">4 stars</label>
-            <input type="radio" id="star3" name="rate" value="3" />
-            <label for="star3" title="text">3 stars</label>
-            <input type="radio" id="star2" name="rate" value="2" />
-            <label for="star2" title="text">2 stars</label>
-            <input type="radio" id="star1" name="rate" value="1" />
-            <label for="star1" title="text">1 star</label>
+                <div class="comment">
+                    <div id="comment">
+
+                    </div>
+                </div>
         </div>
-    </form>
+        </div>
+        <div class="grid-item2">
+            <form action="" onsubmit="kiemtra(); return false">
+                <table class="myTable">
+                    <tr>
+                        <td colspan="2"><h1 align="center">FeedBack Form</h1>
+                        <hr>
+                        </td>
+                        
+                        
+                    </tr>
+                    <tr>
+                        <td colspan="2"><h4 align="center">Please write your feedback below</h4></td>
+                      
+                    </tr>
+                    <tr>
+                        <td>Full Name*: <br>
+                            <input class="inputtext" id="txtname"  placeholder="Enter full name" type="text">
+                        </td>
+                        <td><div class="phone1">Phone*: <br> 
+                            <input class="inputtext" id="txtphone"  placeholder="Enter phone" type="text"></div>
+                        </td>
+                      
+                    </tr>
+                    <tr>
+                        <td>Age*: <br>
+                            <input class="inputtext" id="txtage" placeholder="Enter age" type="text">
+                        </td>
+                        <td><div  class="phone1"> Email*: <br>
+                            <input class="inputtext" id="txtmail" placeholder="Enter email" type="text"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><h4>What do you thinks of sabel? </h4></td>
+                      
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                           <label for="star5" title="text">5 stars</label>
+                           <input type="radio" id="star4" name="rate" value="4" />
+                           <label for="star4" title="text">4 stars</label>
+                           <input type="radio" id="star3" name="rate" value="3" />
+                           <label for="star3" title="text">3 stars</label>
+                           <input type="radio" id="star2" name="rate" value="2" />
+                           <label for="star2" title="text">2 stars</label>
+                           <input type="radio" id="star1" name="rate" value="1" />
+                           <label for="star1" title="text">1 star</label>
 
+                        </td>
+                     
+                    </tr>
+                    <tr>
+                        <td colspan="2"><h4>Message*:</h4></td>
+                   
+                    </tr>
+                    <tr>
+                        <td colspan="2">  <textarea class="input_text1" id="txtmess" placeholder="Enter message" rows="10" cols="25"></textarea></td>
+                       
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: left;"><input type="submit" value="Submit"></td>
+                        
+                    </tr>
+                </table>
+            </form>
+        </div>
+       
+      </div>
+ 
+    <script>
+        addComment("Davichi01", "0123456789", "Trung học phổ thông ABC", "5");
+        addComment("Davichi02", "0123456788", "trung học cơ sở ACB", "3");
+
+        function kiemtra() {
+              var star = document.querySelector('input[name="rate"]:checked').value;
+              var sMess = document.getElementById("txtmess").value;
+              var sName = document.getElementById("txtname").value;
+              var sMail = document.getElementById("txtmail").value;
+              var sAge = document.getElementById("txtage").value;
+              var sPhone = document.getElementById("txtphone").value;
+              var rePhone = /^\d{8,12}$/
+              var reMail = /^\w+[@]\w+[.]\w+$/;
+              
+              if(sName == ""){
+                alert("Full name field can't left blank!")
+                return false;
+              }
+             
+              if(sAge == ""){
+                alert("Address field can't left blank!")
+                return false;
+              }
+              if(!reMail.test(sMail)){
+                alert("Mail field can't left blank!");
+                document.getElementById("txtmail")
+                return false;
+                }
+              
+                if(!rePhone.test(sPhone)){
+                  alert("Phone field can't left blank!");
+                  document.getElementById("txtphone")
+                  return false;
+                  }
+                 
+                  addComment(sName, sPhone, sMess, star);
+            }
+
+            function addComment(name, phone, mess, rating) {
+                strHTML = '<div><div class="div7"><span class="txtname">' + name + '</span></div>';
+                strHTML += getHTMLRating(rating);
+               // strHTML += '<br>' + '<div>'<span class="txtMessage">' + mess + '</span>'</div>';
+               strHTML += '<br>' + '<div class="div10"><span class="txtMessage">' + mess + '</span></div></div>';
+                var tmp = document.createElement('div');
+                //tmp.innerHTML = '<div class="adverts-container top30">' + name + '<div class="advert-carousel">' + 'Message' + '</div>' + '</div>';
+                //tmp.innerHTML = '<div class="txtame">' + name + '</div>' + '<div class="txtPhone">' + phone + '</div>';
+                tmp.innerHTML = strHTML;
+                document.getElementById("comment").appendChild(tmp.firstChild);
+            }
+
+            function getHTMLRating(rating) {
+                strRating = '<div class="rateComment">';
+                strChecked = '';
+
+                for(var i=5; i>=1; i--) {
+                    if (i == rating) {
+                        strChecked = 'checked';
+                    } else {
+                        strChecked = '';
+                    }
+                    strRating += '<input type="radio" name="rateComment' + i + '" value="' + i + '"' + strChecked + ' disabled />' + '<label for="starComment' + i + '" title="textStarComment">' + i + ' stars</label>';
+                }
+
+                strRating += '</div>';
+                return strRating;
+            }
+
+    </script>
 </body>
 </html>
