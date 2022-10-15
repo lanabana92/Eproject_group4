@@ -248,6 +248,7 @@
         width: 20%;
         text-align: center;
     }
+    /* footer */
     .footer{
         margin-top:30px;
         font-size: 10pt;
@@ -271,4 +272,45 @@
    }
    .logo2{
     margin-left: 50px;
+   }
+   /* PTI */
+   .PTIcontent{
+    margin-top: 50px!important;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    padding: 30px!important;
+    box-shadow: 0px 0px 10px 5px gray;
+    background-color: rgba(255, 255, 255, 0.9);
+   }
+   .PTItext1{
+    padding-left: 20px;
+    width: 90%;
+    margin: auto;
+   }
+   .PTItable{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border: 1px solid gray;
+    border-collapse: collapse!important;
+    border-radius: 20px!important;
+    margin-bottom: 30px;
+   }
+   .colum1, .colum2, .colum3 {
+    border: 1px solid gray;
+    padding: 10px;
+
+   }
+   .colum1{
+    text-align: center;
+   }
+   .Theader{
+    background-color: #0066FF;
+    color: white;
+    text-align: center;
+   }
+   .PTIcontainer{
+    background-image: url(../img/motorcyclebackground.jpg);
+    background-size: cover;
    }
