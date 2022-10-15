@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./Asset/CSS/style.css">
-    <script src="./Asset/JS/Java.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
     <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <script src="./Asset/JS/Java.js"></script>
+    <script src="Asset/JS/java.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
 
-<body ng-app="myApp">
+<body ng-app="myApp"ng-controller="Ctr" >
     <!-- Navbar start -->
     <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -83,5 +86,34 @@
     <div ng-view>
         
     </div>  
+    <script>var app = angular.module('myApp',['ngRoute'])
+        app.config(function($routeProvider){
+            $routeProvider
+            .when("/home",{
+                templateUrl:"home.html"
+            })
+            .when("/Car",{
+                templateUrl:"car.html"
+            })
+            .when("/hsbc",{
+                templateUrl:"Hsbc.html"
+            })
+            .when("/About",{
+                templateUrl:"contact.html"
+            });
+        });
+        app.controller("Ctr",function($scope,$http){
+            $http.get("data.json").then(function(response){
+                $scope.car1 = response.data.menu1;
+                $scope.car2 = response.data.menu2;
+                $scope.car3 = response.data.menu3;
+                $scope.car4 = response.data.menu4;
+                $scope.car5 = response.data.menu5;
+                $scope.car6 = response.data.menu6;
+                $scope.car7 = response.data.menu7;
+                $scope.car8 = response.data.menu8;
+                $scope.car9 = response.data.menu9;
+            })            
+        })</script>
 </body>
 </html>

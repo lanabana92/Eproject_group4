@@ -1,8 +1,0 @@
-{  "menu":
-    [
-        {"id":"Car ","name":"Marnie","price":"marnie@gmail.com", "dob":"2000-08-12"},
-        {"id":"S02","name":"Anne","price":"anne@yahoo.com", "dob":"2003-12-12"},
-        {"id":"S03","name":"Chelsea","price":"chelsea@gmail.com", "dob":"2002-02-25"},
-        {"id":"S04","name":"Washington","price":"washinton@hotmail.com", "dob":"2002-06-114"}
-    ]
-}
