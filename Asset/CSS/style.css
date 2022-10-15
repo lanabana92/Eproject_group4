@@ -60,12 +60,11 @@
         z-index: 100;
     }
     
-    .logo{
+    /* .logo{
         float: left;
-        background-color: bisque;
         width: 200px;
         
-    }
+    } */
     
    
     #dropdown-menu{
@@ -206,3 +205,56 @@
         
     }
     /* Luxary car */
+    #carQuoteContent3{
+    
+        background-image: url(../img/RollroyceBackround.jpg);
+        background-size: cover;
+    }
+    
+    .quoteBox3{
+        
+        
+        padding: 50px;
+        width: 450px;
+        color: #FFFFFF;
+        background: rgba(10, 10, 10, 0.7);
+        border-radius: 20px;
+    }  
+    
+    .contentBox4{
+        
+        width: 560px;
+        height: 671px;
+        padding: 20px;
+        margin-left: 50px;
+    
+        background: rgba(6, 6, 6, 0.7);
+        border-radius: 20px;
+        
+    }
+    .mySelector3{
+        border: 0;
+        color: #FFFFFF;
+        border-bottom: 1px solid #65A3FF;
+        background-color: transparent;
+        width: 100%;
+    }
+    
+    .mySelector4{
+        color: #FFFFFF;
+        border: 0;
+        border-bottom: 1px solid #65A3FF;
+        background-color: transparent;
+        width: 20%;
+        text-align: center;
+    }
+    .footer{
+        margin-top:30px;
+        font-size: 15pt;
+        margin-bottom: 30px;
+    }
+    .myText01{
+        margin-top: 60px!important;
+        text-align: center;
+    }
+   
