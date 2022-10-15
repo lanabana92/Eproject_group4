@@ -10,6 +10,10 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/Car2",{
             templateUrl:"car2.html"
         })
+
+        .when("/LuxuryCar",{
+            templateUrl:"LuxuryCar.html"
+        })
         .when("/hsbc",{
             templateUrl:"Hsbc.html"
         })
