@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./Asset/CSS/style.css">
-    <script src="./Asset/JS/Java.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
     <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <script src="./Asset/JS/Java.js"></script>
+    <script src="Asset/JS/java.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
-<style>
-    
-</style>
-<body ng-app="myApp">
+
+<body ng-app="myApp"ng-controller="Ctr" >
     <!-- Navbar start -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><img src="./Asset/img/safe car insurance.png" width="150px" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +29,7 @@
           <div class="menu collapse navbar-collapse myPosition" id="navbarSupportedContent">
                 <ul class="navbar-nav auto-me mb-2 mb-lg-0 myJustify">
                 <li class="nav-item">
-                    <a class="myList" aria-current="page" href="#">Home</a>
+                    <a class="myList" aria-current="page" href="#!home">Home</a>
                 </li>
                 
                 <li class="nav-item dropdown">
@@ -38,9 +39,9 @@
                     <ul id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!Car">Under 9-seaters</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Above 9-seaters</a></li>
+                    <li><a class="dropdown-item" href="#!Car2">Above 9-seaters</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Luxury car</a></li>
+                    <li><a class="dropdown-item" href="">Luxury car</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -59,8 +60,11 @@
                     <a class="myList dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Insurance plans
                     </a>
+
+
+                    
                     <ul id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">HSBC</a></li>
+                    <li><a class="dropdown-item" href="#!hsbc">HSBC</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="#">PTI</a></li>
                     </ul>
@@ -79,10 +83,12 @@
           
         </div>
       </nav>
+      
       <!-- Navbar end -->
-    <div ng-view></div>  
+      <div class="buffer"></div>
+    <div ng-view>
+        
+    </div>  
+    
 </body>
-<script>
-
-</script>
 </html>
