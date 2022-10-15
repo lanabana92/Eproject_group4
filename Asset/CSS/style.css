@@ -250,11 +250,25 @@
     }
     .footer{
         margin-top:30px;
-        font-size: 12pt;
+        font-size: 10pt;
         margin-bottom: 30px;
     }
     .myText01{
         margin-top: 60px!important;
         text-align: center;
     }
-   
+   .MyInput23{
+    border: 0;
+    width: 270px;
+   }
+   .MyInput23:focus {
+    outline: none
+   }
+
+   .myEmailfooter{
+    border-bottom: 1px solid gray;
+    width: 300px;
+   }
+   .logo2{
+    margin-left: 50px;
+   }
