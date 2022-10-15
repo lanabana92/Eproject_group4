@@ -1,7 +1,7 @@
 var app = angular.module('myApp',['ngRoute'])
     app.config(function($routeProvider){
         $routeProvider
-        .when("/home",{
+        .when("/",{
             templateUrl:"home.html"
         })
         .when("/Car",{
@@ -9,6 +9,10 @@ var app = angular.module('myApp',['ngRoute'])
         })
         .when("/Car2",{
             templateUrl:"car2.html"
+        })
+
+        .when("/Feedback",{
+            templateUrl:"feedback.html"
         })
 
         .when("/LuxuryCar",{
