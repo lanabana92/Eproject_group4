@@ -1,0 +1,123 @@
+<style>
+    table,tr,td{
+        
+        width: 100%;
+        text-align: center;
+    }
+    td{
+        padding:8px;
+        
+    }
+    .motorSelector1{
+        width:290px;
+        height: 32px;
+        border-radius: 20px;
+        background-color: #d9d9d9;
+        border: 0;
+        padding: 0 10px;
+    }
+    .motorSelector2{
+        width:99%;
+        height: 32px;
+        border-radius: 20px;
+        background-color: #d9d9d9;
+        border: 0;
+        padding: 0 10px;
+        justify-content: center;
+        display: flex;
+        line-height: 32px;
+    }
+    .motorSelector3{
+        border: 0;
+        background-color: unset;
+        padding: 0px 10px;
+        width: 140px;
+       
+    }
+    .motorSelector4{
+        width:99%;
+        height: 32px;
+        border-radius: 20px;
+        background-color: #FF9C29;
+        color: white;
+        border: 0;
+        padding: 0 10px;
+        justify-content: center;
+        display: flex;
+        line-height: 32px;
+        font-weight: bold;
+    }
+    input.myCheckbox{
+        vertical-align:middle ;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+    .MotorBut1{
+        width: 118px;
+        height: 38px;   
+        background: #65A3FF;
+        border-radius: 30px;
+        font-weight: bold;
+        color: white;
+        border: 0;
+    }
+    .MotorBut1:hover{
+        background-color: blue;
+        opacity: 0.5;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row MouterB">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 position-relative Mbander">
+            <div class="position-absolute top-50 end-0 translate-middle-y Mcontent">
+                
+                <form action="">
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <select class="motorSelector1">
+                                    <option value="Under 50cc">Under 50cc</option>
+                                    <option value="Above 50cc">Above 50cc</option>
+                                    <option value="Electric">Electric bike</option>
+    
+                                </select>
+                            </td>
+                            <td>
+                                <select class="motorSelector1">
+                                    <option value="Under 50cc">Insurance for 3 years</option>
+                                    <option value="Above 50cc">Insurance for 2 years</option>
+                                    <option value="Electric">Insurance for 1 years</option>
+    
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><b>Insurance Duration</b></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="motorSelector2"><input class="motorSelector3" type="date"> to <input type="date" name="" id=""></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input style class="myCheckbox" type="checkbox">occupant accident insurance: 20,000 VND/Year</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><b> Total cost (VAT included)</b></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"> <div class="motorSelector4"></div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit" class="MotorBut1">Next</button></td>
+                        </tr>
+                    </table>
+                </form>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
