@@ -43,6 +43,9 @@
         left: 50%;
         transform: translate(-50%, -50%)
     }
+    .myPromotion2{
+        display: none;
+    }
     
     }
     @media (max-width: 991.98px){
@@ -54,6 +57,13 @@
         text-decoration: none;
         padding: 10px;
     }
+    .myPromotion{
+        display: none;
+    }
+    .promoBox{
+        margin-top: 20px!important;
+    }
+
     }
     nav{
         position: fixed;
@@ -323,10 +333,13 @@
    }
    .Mbander{
     height: inherit;
+    display: flex;
+    justify-content: end;
+    align-items: center;
     
    }
    .Mcontent{
-    height: 317px;
+    height: 320px;
     width: 636px ;
     background-color: #FFFFFF;
     border-radius: 20px;

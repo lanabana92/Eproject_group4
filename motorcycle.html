@@ -1,10 +1,10 @@
 <style>
-    table,tr,td{
+    .Mcontent table, .Mcontent tr, .Mcontent td{
         
         width: 100%;
         text-align: center;
     }
-    td{
+    .Mcontent td{
         padding:8px;
         
     }
@@ -32,6 +32,8 @@
         background-color: unset;
         padding: 0px 10px;
         width: 140px;
+        color:#4B67FC;
+        font-weight: bold
        
     }
     .motorSelector4{
@@ -66,12 +68,95 @@
         background-color: blue;
         opacity: 0.5;
     }
+    .myPromotion{
+        margin-top: 50px;
+        height: 93px;
+        width: 100%;
+    }
+    .promoBox{
+        width: 310px;
+        height: 93px;
+        background-color: #D9D9D9;
+        border-radius: 20px;
+        padding: 20px 10px;
+        display: flex;
+        
+        margin: auto;
+    }
+    .myPromotion table{
+        width: 100%;  
+    }
+    .nexti{
+        background-color: rgb(187, 187, 187);
+        width: 30px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        text-align: center;
+        font-weight: bold;
+        float: left;
+        border-radius: 10px;
+        border: 0px;
+        padding: 0;
+        margin-left: auto;
+        
+        }
+        .processContainer{
+            width: 100%;
+            background-color: #D9D9D9;
+            margin-top: 50px;
+            padding: 20px;
+        }
+        .Mtab1{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .Mbutton{
+             width: 300px;
+             height: 82px;
+             font-size: 32px;             
+             border-radius: 20px !important;
+             
+        }
+        .contentBox2{
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            padding: 20px;
+            
+        }
+        .subProcessContainer{
+            width: 100%;
+            
+            display: flex;
+            justify-content: center;
+        }
+        .Mbutton2{
+           font-size: 20px;
+           font-weight: bold;
+           padding: 0px 30px;
+           
+        }
+        .Mbutton2:active {
+            background-color: #d9d9d9 !important;
+            border-bottom: 0px !important;
+            border-radius: 10px 10px 0 0;
+        }
+        .contentbox3{
+            background-color: #d9d9d9!important;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
 </style>
 <div class="container-fluid">
+    <!-- buy insurance form -->
     <div class="row MouterB">
         <div class="col-md-1"></div>
         <div class="col-md-10 position-relative Mbander">
-            <div class="position-absolute top-50 end-0 translate-middle-y Mcontent">
+            <div class="Mcontent">
                 
                 <form action="">
                     <table>
@@ -120,4 +205,107 @@
         </div>
         
     </div>
+    <!-- promotion -->
+    <div class="col-lg-10 myPromotion">
+        <table align="center">
+            <tr>
+                <td style="width:33.33%;">
+                    <div class="promoBox">
+                        <img src="./Asset/img/dollaricon.webp" alt="">
+                        <p style="margin-left:20px">Sale off:  <br>
+                        <b>Only 66.000 VND/year</b></p>
+                        <button class="nexti"><i class="bi bi-chevron-right "></i></button>
+                    </div>
+                </td>
+                <td style="width:33.33%;">
+                    <div class="promoBox">
+                        <img src="./Asset/img/crown icon.webp" alt="">
+                        <p style="margin-left:20px">Compensation:  <br>
+                            <b>up to 150 Million VND</b></p>
+                            <button class="nexti"><i class="bi bi-chevron-right "></i></button>
+                    </div>
+                </td>
+                <td>
+                    <div class="promoBox">
+                        <img src="./Asset/img/card icon.webp" alt="">
+                        <p style="margin-left:20px">Payment Method:  <br>
+                            <b>Online</b></p>
+                            <button class="nexti"><i class="bi bi-chevron-right "></i></button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+    <!-- responsive protion -->
+    <div class="myPromotion2">
+        <div class="promoBox">
+            <img src="./Asset/img/dollaricon.webp" alt="">
+            <p style="margin-left:20px">Sale off:  <br>
+            <b>Only 66.000 VND/year</b></p>
+            <button class="nexti"><i class="bi bi-chevron-right "></i></button>
+        </div>
+        <div class="promoBox">
+            <img src="./Asset/img/crown icon.webp" alt="">
+            <p style="margin-left:20px">Compensation:  <br>
+                <b>up to 150 Million VND</b></p>
+                <button class="nexti"><i class="bi bi-chevron-right "></i></button>
+        </div>
+        <div class="promoBox">
+            <img src="./Asset/img/card icon.webp" alt="">
+            <p style="margin-left:20px">Payment Method:  <br>
+                <b>Online</b></p>
+                <button class="nexti"><i class="bi bi-chevron-right "></i></button>
+        </div>
+    </div>        
+    <!-- process information -->
+    <div class="processContainer">
+        <div class="Mtab1">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                <button class="nav-link active Mbutton" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">INTRODUCE</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                <button class="nav-link Mbutton " id="pills-profile-tab " data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">PROCESS</button>
+                </li>
+            </ul>
+        </div>
+         <div class="contentBox2">
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="subProcessContainer">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link active Mbutton2" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Introduction</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link Mbutton2" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Applicable Object</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link Mbutton2" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Effective time</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link Mbutton2" id="compensation-tab" data-bs-toggle="tab" data-bs-target="#compensation" type="button" role="tab" aria-controls="compensation" aria-selected="false">Compensation</button>
+                              </li>
+                          </ul>
+                    </div>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active contentbox3" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <p>Compulsory civil liability insurance 
+                                of motor vehicle owners is a type of compulsory 
+                                insurance prescribed by the State. All motor vehicle owners,
+                                 individuals, organizations (including foreigners) owning motor vehicles in Vietnam must participate in order to protect and ensure the interests of third parties if they are unfortunately injured. and property caused by traffic accidents.</p>
+                        </div>
+                        <div class="tab-pane fade contentbox3" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                        <div class="tab-pane fade contentbox3" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                        <div class="tab-pane fade contentbox3" id="compensation" role="tabpanel" aria-labelledby="compensation-tab">ccccc</div>
+                        
+                      </div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+            </div>
+         </div>   
+            
+    </div>
+
 </div>
