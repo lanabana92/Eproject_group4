@@ -5,7 +5,6 @@
 	<title>Login to system</title>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.min.js"></script>		
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-	<link rel="stylesheet" href="style.css">
 </head>
 <style>
     *{
@@ -35,25 +34,13 @@ body{
 	color: #fff;
 	box-shadow: 0 15px 25px rgba(0,0,0,0.5);
 }
-.form::before{
-	content: '';
-	position: absolute;
-	top: 0;
-	left:0;
-	width: 50%;
-	height: 100%;
-	background: rgba(255,255,255,0.08);
-	/*transform: skewX(-15deg);
-	transform-origin: bottom left;*/
-	border-radius: 12px;
-	pointer-events: none; 
-}
+
 .form img{
-	position: absolute;
+    margin: 80px;
+    text-align: center;
 	top:-50px;
 	left: calc(50% - 50px);
-	width: 100px;
-	/*background: rgba(0,0,0,0.8);*/
+	width: 200px;
 	border-radius: 50%;
 }
 .form h2{
@@ -164,7 +151,7 @@ body{
 <body>
 	<div class="login-wrapper">
 		<form action="" class="form">
-			<img src="image/avatar1.png" alt="">
+			<img src="Asset/Img/avatar.png" alt="">
 			<div class="input-group">
 				<input type="text" name="loginUser" id="loginUser" required>
 				<label for="loginUser">Name</label>
