@@ -21,6 +21,13 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/hsbc",{
             templateUrl:"Hsbc.html"
         })
+
+        .when("/PTI",{
+            templateUrl:"PTI.html"
+        })
+        .when("/Motor",{
+            templateUrl:"motorcycle.html"
+        })
         .when("/About",{
             templateUrl:"contact.html"
         });
