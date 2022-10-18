@@ -143,11 +143,11 @@
          .align{
             border-radius: 20px;
             text-align: left;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 4px 10px rgb(0 0 0 / 25%);
             margin-top: 20px;
-            width: 28%;
-            margin-left: 75px;
-            height: 90%;
+            width: 24%;
+            margin-left: 135px;
+            height: 75%;
          }
          .mySlides {
             font-size: 15pt;
@@ -187,6 +187,11 @@
          }
          .message30{
             margin-right: 10px;
+         }
+         .pt13{
+            margin-left: 10px;
+            margin-top: 10px;
+            font-size: 13pt;
          }
     </style>
 
@@ -230,11 +235,11 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </div>
-                </div> <br>
-                <h3>Davichi</h3>
-                
-                
-                111111111111111111111111111
+                </div> 
+                <div class="pt13">
+                    Davichi <br>
+                </div>
+                1111111111111111111
             </div>
             <div class="col-md-4 align">
                 <div class="user_star">
@@ -246,11 +251,11 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span> 
                     </div>
-                </div> <br>
-                <h3>Davichi</h3>
-                
-                1111111111111111111111
-                
+                </div> 
+                <div class="pt13">
+                    Davichi <br>
+                    11111111111111111
+                 </div>
             </div>
             <div class="col-md-4 align">
                 <div class="user_star">
@@ -262,9 +267,11 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </div>
-                </div> <br>
-                <h3>Davichi</h3> 
-               111111111111111111111
+                </div>
+                <div class="pt13"> 
+                    Davichi <br>
+                    1111111111111111
+                </div>
             </div>
         </div>
         <div class=" mySlides row w3-animate-right">
@@ -278,9 +285,11 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span> 
                     </div>
-                </div> <br>
-                <h3>Davichi</h3> 
-                22222222222222222222222222222222   
+                </div>
+                <div class="pt13"> 
+                    Davichi <br>
+                    22222222222222222
+                </div>   
             </div>
             <div class="col-md-4 feed1 align">
                 <div class="user_star">
@@ -292,9 +301,11 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span> 
                     </div>
-                </div> <br>
-                <h3>Davichi</h3>
-                222222222222222222222222222
+                </div> 
+                <div class="pt13">
+                    Davichi <br>
+                    222222222222222222
+                </div>
             </div>
             <div class="col-md-4 align">
                 <div class="user_star">
@@ -306,11 +317,11 @@
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span> 
                     </div>
-                </div> <br>
-                <h3>Davichi</h3>
-              
-                2222222222222222222222
-                
+                </div> 
+                <div class="pt13">
+                    Davichi <br>
+                    2222222222222222222222
+                </div>
             </div>
         </div>
         <div class="mySlides row w3-animate-right">
@@ -324,9 +335,11 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span> 
                     </div>
-                </div> <br>
-                <h3>Davichi</h3> 
-                33333333333333333333      
+                </div>
+                <div class="pt13"> 
+                    Davichi <br>
+                    33333333333333333333 
+                </div>     
             </div>
             <div class="col-md-4 feed1 align">
                 <div class="user_star">
@@ -338,9 +351,11 @@
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                     </div>
-                </div> <br>
-                <h3>Davichi</h3> 
-                33333333333333333333333
+                </div>
+                <div class="pt13"> 
+                    Davichi <br>
+                    33333333333333333333333
+                </div>
             </div>
             <div class="col-md-4 align">
                 <div class="user_star">
@@ -352,9 +367,11 @@
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                     </div>
-                </div> <br>
-                <h3>Davichi</h3> 
-               333333333333333333333 
+                </div>
+                <div class="pt13">
+                    Davichi <br>
+                    333333333333333333333
+                </div>  
             </div>
         </div>
         <div style="text-align:center">
@@ -436,7 +453,7 @@
             }
             slides[slideIndex-1].style.display = "inline-flex";  
             dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 5000); // Change image every 8 seconds
+           //setTimeout(showSlides, 5000); // Change image every 8 seconds
         }
         
         function currentSlide(index) {
