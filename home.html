@@ -5,6 +5,7 @@
               var sMail = document.getElementById("txtmail").value;
               var sAdd = document.getElementById("txtadd").value;
               var sPhone = document.getElementById("txtphone").value;
+              var sMess = document.getElementById("txtmess").value;
               var rePhone = /^\d{8,12}$/
               var reMail = /^\w+[@]\w+[.]\w+$/;
               
@@ -26,6 +27,10 @@
                 alert("Address field can't left blank!")
                 return false;
               } 
+              if(sMess == ""){
+                alert("Mess field can't left blank!")
+                return false;
+              } 
       
               var message = [];
                           message.push("Registed information");
@@ -34,6 +39,7 @@
                           message.push("Address: " + sAdd );
                           message.push("Mail: " + sMail );
                           message.push("Phone: " + sPhone );
+                          message.push("Message: " + sMess );
                           alert(message.join("\n"));
             }
     </script>
@@ -43,7 +49,7 @@
         }
         .mydiv2{
             margin-top: 20px;
-            box-shadow: 5px 5px 5px 5px black;
+            box-shadow: 5px 5px 10px 2px gray;
             height: 550px;
             border-radius: 20px;   
         }
@@ -56,24 +62,31 @@
             margin-top: 10px;
         }
         .input_text{
+            background-color: #d9d9d9;
             border-radius: 10px;
             width: 90%;
-            height: 35px;
+            height: 30px;
             display: inline-block;
             padding: 5px 10px;
+            border: 0px;
+            outline: none;
         }
         .mess{
+            background-color: #d9d9d9;
             margin-top: 10px;
             border-radius: 10px;
             width: 90%;
-            height: 250px;
+            height: 200px;
             padding: 5px 10px;
+            border: 0px;
+            outline: none;   
         }
         .tab1{
             width: 100%;
             text-align: center;
         }
         .tab2{
+            margin-top: 30px;
             width: 100%;
         }
         .send{
@@ -81,55 +94,36 @@
             width: 20%;
             background-color:#65A3FF;
             color: white;
+            border: 0px;
+            outline: none;
+
         }
         .foot{
             margin-top: 130px;
             height: 600px;
         }
         .explore{
-            font-size: 15pt;
-            
-            
-            
+            font-size: 15pt;  
         }
         .office{
-            font-size: 15pt;
-            
+            font-size: 15pt; 
         }
         .product{
-            font-size: 15pt;
-            
-            
+            font-size: 15pt; 
         }
         .logo{
             display: inline-block;
-            
         }
         .email{
             margin-left: 150px;
          }
-         .mess1{
-            font-size: 15pt;
-            display: inline-block;
-            margin-top: 10px;
-         }
-         .add{
-            font-size: 15pt;
-            display: inline-block;
-            margin-top: 10px;
-         }
-         .mail{
-            font-size: 15pt;
-            display: inline-block;
-            margin-top: 10px; 
-         }
-         .phone{
-            font-size: 15pt;
+         .text30{
+            font-size: 13pt;
             display: inline-block;
             margin-top: 10px;
          }
          .name{
-            font-size: 15pt;
+            font-size: 13pt;
             display: inline-block;
          }
          .arrow{
@@ -137,37 +131,130 @@
             font-size: 80pt;
          }
          .comment{
-            background-color: aqua;
             width: 100%;
-            height: 500px;
+            height: 400px;
             border-radius: 20px;
             margin-top: 30px;
          }
-         /* table,tr,td{
-            border: 1px solid black;
-         } */
+        
          .homeContent{
             margin-bottom: 200px;
          }
+         .checked{
+            color: #F8A401;
+         }
+         .align{
+            border-radius: 20px;
+            text-align: left;
+            box-shadow: 0px 4px 10px rgb(0 0 0 / 25%);
+            margin-top: 20px;
+            width: 24%;
+            
+            height: 75%;
+         }
+         .mySlides {
+            font-size: 15pt;
+            height: 80%;
+            display: flex;
+            justify-content:space-around;
+         }
+         .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+          }
+          .dot:hover {
+            background-color: red;
+          }
+          .star27 {
+            float: right;
+          }
+          .active {
+            background-color: red;
+          }
+          .user_star {
+            display: block;
+            margin: 20px 10px 0 10px;
+          }
+          .phone30{
+            margin-right: 27px;
+          }
+         .address30{
+            margin-right: 15px;
+         }
+         .mail30{
+            margin-right: 33px;
+         }
+         .message30{
+            margin-right: 10px;
+         }
+         .pt13{
+            margin-left: 10px;
+            margin-top: 10px;
+            font-size: 13pt;
+         }
+         .banner1{
+            background-image: url(./Asset/img/car.jpg);
+            height: 400px;
+            background-size: cover;
+            color: white;
+         }
+         .banner2{
+            background-image: url(./Asset/img/bike.jpg);
+            height: 400px;
+            background-size: cover;            
+            
+            
+         }
+         .bannerContent1{
+            margin-left: 200px;
+            margin-top: 100px;
+            width: 400px;
+            height: 200px;
+            background-color: rgb(255, 255, 255,0.5);
+            border-radius: 20px;
+            padding: 20px;
+            color: white;
+
+         }
+         .bannerContent2{
+            margin-left: 200px;
+            margin-top: 100px;
+            width: 400px;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            padding: 20px;
+            color: aliceblue;
+         }
     </style>
 
-<div class="homeContent">
+<div class="background homeContent">
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
   
         <!-- Indicators/dots -->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
           <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-         
         </div>
         
         <!-- The slideshow/carousel -->
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./Asset/img/car.jpg" alt="Los Angeles" class="d-block" style="width:100%">
-          </div>
-          <div class="carousel-item">
-            <img src="./Asset/img/bike.jpg" alt="Chicago" class="d-block" style="width:100%" >
+          <div class=" carousel-item active banner1">
+           
+            <div class="bannerContent1">
+                kjgdldfgl
+            </div>
+        </div>
+          <div class="carousel-item banner2">
+            <div class="bannerContent2">
+                kjgdldfgl
+            </div>
           </div>
         </div>
         
@@ -180,15 +267,162 @@
                 <div class="arrow">❯</div>
             </button>
       </div>
-      <div class="comment">
-        <table>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+      <div class="comment container-fluid">
+        <div class="mySlides row w3-animate-right">
+            <div class="col-md-4 align">
+                <div class="user_star">
+                    <img src="./Asset/img/user.jpg" width="17%">
+                    <div class="star27"> 
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div> 
+                <div class="pt13">
+                    Davichi <br>
+                </div>
+                1111111111111111111
+            </div>
+            <div class="col-md-4 align">
+                <div class="user_star">
+                    <img src="./Asset/img/user.jpg" width="17%">
+                    <div class="star27"> 
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span> 
+                    </div>
+                </div> 
+                <div class="pt13">
+                    Davichi <br>
+                    11111111111111111
+                 </div>
+            </div>
+            <div class="col-md-4 align">
+                <div class="user_star">
+                    <img src="./Asset/img/user.jpg" width="17%">
+                    <div class="star27">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+                <div class="pt13"> 
+                    Davichi <br>
+                    1111111111111111
+                </div>
+            </div>
+        </div>
+        <div class=" mySlides row w3-animate-right">
+            <div class="col-md-4 align">
+                <div class="user_star">
+                    <img src="./Asset/img/user.jpg" width="17%">
+                    <div class="star27">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span> 
+                    </div>
+                </div>
+                <div class="pt13"> 
+                    Davichi <br>
+                    22222222222222222
+                </div>   
+            </div>
+            <div class="col-md-4 feed1 align">
+                <div class="user_star">
+                    <img src="./Asset/img/user.jpg" width="17%"> 
+                    <div class="star27">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span> 
+                    </div>
+                </div> 
+                <div class="pt13">
+                    Davichi <br>
+                    222222222222222222
+                </div>
+            </div>
+            <div class="col-md-4 align">
+                <div class="user_star">
+                    <img src="./Asset/img/user.jpg" width="17%">
+                    <div class="star27"> 
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span> 
+                    </div>
+                </div> 
+                <div class="pt13">
+                    Davichi <br>
+                    2222222222222222222222
+                </div>
+            </div>
+        </div>
+        <div class="mySlides row w3-animate-right">
+            <div class="col-md-4 align">
+                <div class="user_star">
+                    <img src="./Asset/img/user.jpg" width="17%">
+                    <div class="star27">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span> 
+                    </div>
+                </div>
+                <div class="pt13"> 
+                    Davichi <br>
+                    33333333333333333333 
+                </div>     
+            </div>
+            <div class="col-md-4 feed1 align">
+                <div class="user_star">
+                    <img src="./Asset/img/user.jpg" width="17%">
+                    <div class="star27">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+                <div class="pt13"> 
+                    Davichi <br>
+                    33333333333333333333333
+                </div>
+            </div>
+            <div class="col-md-4 align">
+                <div class="user_star">
+                    <img src="./Asset/img/user.jpg" width="17%"> 
+                    <div class="star27">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                </div>
+                <div class="pt13">
+                    Davichi <br>
+                    333333333333333333333
+                </div>  
+            </div>
+        </div>
+        <div style="text-align:center">
+            <span class="dot w3-animate-right" onclick="currentSlide(1)" ></span> 
+            <span class="dot w3-animate-right" onclick="currentSlide(2)"></span> 
+            <span class="dot w3-animate-right" onclick="currentSlide(3)"></span> 
+          </div>
       </div>
     <div class="mydiv1 container-fluid" >
         <div class="row">
@@ -215,20 +449,20 @@
                                     <td class=""><input class="input_text" id="txtname" placeholder="Enter your name" type="text"></td>
                                 </tr>
                                 <tr >
-                                    <td class="phone">Phone:*</td>
+                                    <td class="text30 phone30">Phone:*</td>
                                     <td><input class="input_text margin10" id="txtphone" placeholder="Enter your phone" type="text"></td>
                                 </tr>
                                 <tr>
-                                    <td class="mail">Email:*</td>
+                                    <td class="text30 mail30">Email:*</td>
                                     <td><input class="input_text margin10" id="txtmail" placeholder="Enter your mail" type="text"></td>
                                 </tr>
                                 <tr>
-                                    <td class="add">Address:*</td>
+                                    <td class="text30 address30">Address:*</td>
                                     <td><input class="input_text margin10" id="txtadd" placeholder="Enter your address" type="text"></td>
                                 </tr>
                                 <tr>
-                                    <td class="mess1">Message:*</td>
-                                    <td><textarea class="mess" placeholder="Enter your message" name="" id="" cols="30" rows="10"></textarea></td>
+                                    <td class="text30 message30">Message:*</td>
+                                    <td><textarea class="mess" id="txtmess" placeholder="Enter your message" name="" id="" cols="30" rows="10"></textarea></td>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -242,6 +476,46 @@
             </div>
         </div>
     </div>
-</div>
-    
-
+    <script>
+        var slideIndex = 0;
+        showSlides();
+        var slides,dots;
+        
+        function showSlides() {
+            var i;
+            slides = document.getElementsByClassName("mySlides");
+            dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+               slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex> slides.length) {
+                slideIndex = 1;
+            }    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "inline-flex";  
+            dots[slideIndex-1].className += " active";
+           setTimeout(showSlides, 5000); // Change image every 5gi seconds
+        }
+        
+        function currentSlide(index) {
+            if (index> slides.length) {
+                index = 1;
+            }
+            else if(index < 1){
+                index = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+               slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[index-1].style.display = "inline-flex";  
+            dots[index-1].className += " active";
+        }
+    </script>
+</body>
+</html>

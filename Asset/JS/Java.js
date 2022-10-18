@@ -25,6 +25,9 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/PTI",{
             templateUrl:"PTI.html"
         })
+        .when("/Motor",{
+            templateUrl:"motorcycle.html"
+        })
         .when("/About",{
             templateUrl:"contact.html"
         });
