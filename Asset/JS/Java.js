@@ -48,16 +48,14 @@ var app = angular.module('myApp',['ngRoute'])
     })
 
     app.controller("Ctr2",function($scope){
-            $scope.Add = function(){
-                var clientInfo = {
-                "name":$scope.clientName,
-                "phone":$scope.clientPhone,
-                "email":$scope.clientEmail,
-                "city":$scope.clientCity,
-                "status":$scope.plateStatus,
-                "type":$scope.motorType
-            }
-            }
+         $scope.motorType = "60000";   
+         $scope.option= "3";
     })
 
+//     app.filter('myFilter',function(){
+//         return function () {
+//         $scope.year = "years";
+//     }
+// })
+    
     
