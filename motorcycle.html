@@ -36,6 +36,9 @@
         font-weight: bold
        
     }
+    .motorSelector3{
+        outline: none;
+    }
     .motorSelector4{
         width:99%;
         height: 32px;
@@ -169,7 +172,7 @@
                     <table>
                         <tr>
                             <td style="width: 50%;">
-                                <select class="motorSelector1" id="motortype">
+                                <select onclick="discheck()" class="motorSelector1" id="motortype">
                                     <option value="60000">Under 50cc</option>
                                     <option value="70000">Above 50cc</option>
                                     <option value="50000">Electric bike</option>
@@ -195,13 +198,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><input style class="myCheckbox" id="occupant" type="checkbox" value="20000">occupant accident insurance: 20,000 VND/Year</td>
+                            <td colspan="2"><input style class="myCheckbox" id="occupant" type="checkbox" value="20000" disabled>occupant accident insurance: 20,000 VND/Year</td>
                         </tr>
                         <tr>
                             <td colspan="2"><b> Total cost (VAT included)</b></td>
                         </tr>
                         <tr>
-                            <td colspan="2"> <div class="motorSelector4"><input class="motorSelector3" type="text" id="value" readonly></div> </td>
+                            <td colspan="2"> <div class="motorSelector4"><input style="text-align: center; color: #ffff;" class="motorSelector3" type="text" id="value" readonly></div> </td>
                         </tr>
                         <tr>
                             <td colspan="2"><button type="submit" class="MotorBut1">Next</button></td>
@@ -420,24 +423,57 @@
     });
     
     $(document).on('change', "#motortype", function (e) {
-    e.preventDefault();
-    var motortype= $("#motortype").val();
-    var years = $("#nbDays").val();
-    
-    if ($("#occupant").is(':checked')){
-        var occupant = 20000;
-    } else {
-        occupant = 0;
-    }
+        e.preventDefault();
+        var motortype= $("#motortype").val();
+        var years = $("#nbDays").val();
+        var value = parseFloat(motortype) * parseFloat(years);
 
-        
-    
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'VND',
+            });
+        $("#value").val(formatter.format(value))
+    });
 
-    
-    var value = parseFloat(motortype) * parseFloat(years) + parseFloat(occupant) ;
-    $("#value").val(value);
+    $(document).on('change', "#nbDays", function (e) {
+        e.preventDefault();
+        var motortype= $("#motortype").val();
+        var years = $("#nbDays").val();       
+        var value = parseFloat(motortype) * parseFloat(years);
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'VND',
+            });
+        $("#value").val(formatter.format(value))
+    });
 
-});
+    $(document).on('change', "#occupant", function (e) {
+        e.preventDefault();
+        var motortype= $("#motortype").val();
+        var years = $("#nbDays").val();       
+        var value = parseFloat(motortype) * parseFloat(years);
+        if ($("#occupant").is(':checked')){
+            var occupant = 20000;
+        } else {
+            occupant = 0;
+        }
+        var value = parseFloat(value) + parseFloat(occupant);
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'VND',
+            });
+        $("#value").val(formatter.format(value))
+
+    });
+
+    function discheck(){
+        var value1 = document.getElementById("value").value;
+        if ( value1 == "" ) {
+        document.getElementById("occupant").setAttribute("disabled","disabled");
+        } else {
+        document.getElementById("occupant").removeAttribute("disabled");
+        }
+    } 
 
 </script>
 
