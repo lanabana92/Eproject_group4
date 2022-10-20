@@ -29,7 +29,7 @@ var app = angular.module('myApp',['ngRoute'])
             templateUrl:"motorcycle.html"
         })
         .when("/About",{
-            templateUrl:"contact.html"
+            templateUrl:"About.html"
         });
     });
 
@@ -45,6 +45,19 @@ var app = angular.module('myApp',['ngRoute'])
             $scope.car8 = response.data.menu8;
             $scope.car9 = response.data.menu9;
         })            
+    })
+
+    app.controller("Ctr2",function($scope){
+            $scope.Add = function(){
+                var clientInfo = {
+                "name":$scope.clientName,
+                "phone":$scope.clientPhone,
+                "email":$scope.clientEmail,
+                "city":$scope.clientCity,
+                "status":$scope.plateStatus,
+                "type":$scope.motorType
+            }
+            }
     })
 
     
