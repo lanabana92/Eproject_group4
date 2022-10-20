@@ -1,240 +1,175 @@
+<style>
 
-    <script>
-        function kiemtra() {
-              var sName = document.getElementById("txtname").value;
-              var sMail = document.getElementById("txtmail").value;
-              var sAdd = document.getElementById("txtadd").value;
-              var sPhone = document.getElementById("txtphone").value;
-              var sMess = document.getElementById("txtmess").value;
-              var rePhone = /^\d{8,12}$/
-              var reMail = /^\w+[@]\w+[.]\w+$/;
-              
-              if(sName == ""){
-                alert("Full name field can't left blank!")
-                return false;
-              }
-              if(!rePhone.test(sPhone)){
-                alert("Phone field can't left blank!");
-                document.getElementById("txtphone")
-                return false;
-                }
-              if(!reMail.test(sMail)){
-                alert("Mail field can't left blank!");
-                document.getElementById("txtmail")
-                return false;
-                }
-              if(sAdd == ""){
-                alert("Address field can't left blank!")
-                return false;
-              } 
-              if(sMess == ""){
-                alert("Mess field can't left blank!")
-                return false;
-              } 
-      
-              var message = [];
-                          message.push("Registed information");
-                          message.push("+++++++++++++++++++++++++++++") ;
-                          message.push("Name: " + sName) ;
-                          message.push("Address: " + sAdd );
-                          message.push("Mail: " + sMail );
-                          message.push("Phone: " + sPhone );
-                          message.push("Message: " + sMess );
-                          alert(message.join("\n"));
-            }
-    </script>
-    <style>
-        .mydiv1{
-            height: 500px;
-        }
-        .mydiv2{
-            margin-top: 20px;
-            box-shadow: 5px 5px 10px 2px gray;
-            height: 550px;
-            border-radius: 20px;   
-        }
-        .map{
-            margin-top: 50px;
-            margin-left: 30px;
-            width: 100%;
-        }
-        .margin10{
-            margin-top: 10px;
-        }
-        .input_text{
-            background-color: #d9d9d9;
-            border-radius: 10px;
-            width: 90%;
-            height: 30px;
-            display: inline-block;
-            padding: 5px 10px;
-            border: 0px;
-            outline: none;
-        }
-        .mess{
-            background-color: #d9d9d9;
-            margin-top: 10px;
-            border-radius: 10px;
-            width: 90%;
-            height: 200px;
-            padding: 5px 10px;
-            border: 0px;
-            outline: none;   
-        }
-        .tab1{
-            width: 100%;
-            text-align: center;
-        }
-        .tab2{
-            margin-top: 30px;
-            width: 100%;
-        }
-        .send{
-            border-radius: 10px;
-            width: 20%;
-            background-color:#65A3FF;
-            color: white;
-            border: 0px;
-            outline: none;
 
-        }
-        .foot{
-            margin-top: 130px;
-            height: 600px;
-        }
-        .explore{
-            font-size: 15pt;  
-        }
-        .office{
-            font-size: 15pt; 
-        }
-        .product{
-            font-size: 15pt; 
-        }
-        .logo{
-            display: inline-block;
-        }
-        .email{
-            margin-left: 150px;
-         }
-         .text30{
-            font-size: 13pt;
-            display: inline-block;
-            margin-top: 10px;
-         }
-         .name{
-            font-size: 13pt;
-            display: inline-block;
-         }
-         .arrow{
-            color: black;
-            font-size: 80pt;
-         }
-         .comment{
-            width: 100%;
-            height: 400px;
-            border-radius: 20px;
-            margin-top: 30px;
-         }
-        
-         .homeContent{
-            margin-bottom: 200px;
-         }
-         .checked{
-            color: #F8A401;
-         }
-         .align{
-            border-radius: 20px;
-            text-align: left;
-            box-shadow: 0px 4px 10px rgb(0 0 0 / 25%);
-            margin-top: 20px;
-            width: 24%;
-            
-            height: 75%;
-         }
-         .mySlides {
-            font-size: 15pt;
-            height: 80%;
-            display: flex;
-            justify-content:space-around;
-         }
-         .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-          }
-          .dot:hover {
-            background-color: red;
-          }
-          .star27 {
-            float: right;
-          }
-          .active {
-            background-color: red;
-          }
-          .user_star {
-            display: block;
-            margin: 20px 10px 0 10px;
-          }
-          .phone30{
-            margin-right: 27px;
-          }
-         .address30{
-            margin-right: 15px;
-         }
-         .mail30{
-            margin-right: 33px;
-         }
-         .message30{
-            margin-right: 10px;
-         }
-         .pt13{
-            margin-left: 10px;
-            margin-top: 10px;
-            font-size: 13pt;
-         }
-         .banner1{
-            background-image: url(./Asset/img/car.jpg);
-            height: 400px;
-            background-size: cover;
-            color: white;
-         }
-         .banner2{
-            background-image: url(./Asset/img/bike.jpg);
-            height: 400px;
-            background-size: cover;            
-            
-            
-         }
-         .bannerContent1{
-            margin-left: 200px;
-            margin-top: 100px;
-            width: 400px;
-            height: 200px;
-            background-color: rgb(255, 255, 255,0.5);
-            border-radius: 20px;
-            padding: 20px;
-            color: white;
+    .swiper {
+      width: 90%;
+      height: 100%;
+   
+    }
 
-         }
-         .bannerContent2{
-            margin-left: 200px;
-            margin-top: 100px;
-            width: 400px;
-            height: 200px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 20px;
-            padding: 20px;
-            color: aliceblue;
-         }
-    </style>
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: yellow;
+      height: 300px;
+      border-radius:20px;
+      width:30% !important ;
+      margin: 0 28px;
+      margin-top: 20px;
 
-<div class="background homeContent">
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+   
+    .banner1{
+      background-image: url(./Asset/img/car.jpg);
+      height: 400px;
+      background-size: cover;
+      color: white;
+   }
+   .banner2{
+      background-image: url(./Asset/img/bike.jpg);
+      height: 400px;
+      background-size: cover;            
+   }
+   .bannerContent1{
+      margin-left: 200px;
+      margin-top: 100px;
+      width: 400px;
+      height: 200px;
+      background-color: rgb(255, 255, 255,0.5);
+      border-radius: 20px;
+      padding: 20px;
+      color: white;
+
+   }
+   .bannerContent2{
+      margin-left: 200px;
+      margin-top: 100px;
+      width: 400px;
+      height: 200px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      padding: 20px;
+      color: aliceblue;
+   }
+   .user_star {
+    display: block;
+    margin: 0px 10px 180px 10px;
+}
+  .star27 {
+    float: right;
+  }
+  .pt13{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 13pt;
+ }
+ .send{
+    border-radius: 10px;
+    width: 20%;
+    height: 40px;
+    background-color:#65A3FF;
+    color: white;
+    border: 0px;
+    outline: none;
+ }
+ .name{
+    font-size: 13pt;
+    display: inline-block;
+ }
+   .phone30{
+    margin-right: 27px;
+  }
+ .address30{
+    margin-right: 15px;
+ }
+ .mail30{
+    margin-right: 33px;
+ }
+ .message30{
+    margin-right: 10px;
+ }
+ .input_text{
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    width: 90%;
+    height: 30px;
+    display: inline-block;
+    padding: 5px 10px;
+    border: 0px;
+    outline: none;
+}
+.margin10{
+    margin-top: 10px;
+}
+ .text30{
+  font-size: 13pt;
+  display: inline-block;
+  margin-top: 10px;
+ }
+ .tab2{
+  margin-top: 30px;
+  width: 100%;
+ }
+ .tab1{
+  width: 100%;
+  text-align: center;
+ }
+ .mydiv1{
+  height: 500px;
+ }
+ .mydiv2{
+  margin-top: 20px;
+  box-shadow: 5px 5px 10px 2px gray;
+  height: 550px;
+  border-radius: 20px;   
+  }
+ .map{
+  margin-top: 50px;
+  margin-left: 30px;
+  width: 100%;
+  }
+ .input_text{
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  width: 90%;
+  height: 30px;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 0px;
+  outline: none;
+}
+.mess{
+  background-color: #d9d9d9;
+  margin-top: 10px;
+  border-radius: 10px;
+  width: 90%;
+  height: 200px;
+  padding: 5px 10px;
+  border: 0px;
+  outline: none;   
+}
+.all{
+    padding-bottom: 80px;
+}
+
+
+  </style>
+  <div class="all">
+  <div class="background homeContent">
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
   
         <!-- Indicators/dots -->
@@ -266,256 +201,108 @@
             <button  class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
                 <div class="arrow">❯</div>
             </button>
+    </div>
+  <!-- Swiper -->
+  <div class="">
+  <div class="swiper mySwiper ">
+    <div class="swiper-wrapper comment300">
+      <div class="swiper-slide">
+        <div class="user_star">
+            <img src="./Asset/img/user.jpg" width="27%">
+            <div class="star27"> 
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span> 
+            </div>
+        </div> 
+        <div class="pt13">
+            Davichi <br>
+            11111111111111111
+         </div>
       </div>
-      <div class="comment container-fluid">
-        <div class="mySlides row w3-animate-right">
-            <div class="col-md-4 align">
-                <div class="user_star">
-                    <img src="./Asset/img/user.jpg" width="17%">
-                    <div class="star27"> 
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                </div> 
-                <div class="pt13">
-                    Davichi <br>
-                </div>
-                1111111111111111111
-            </div>
-            <div class="col-md-4 align">
-                <div class="user_star">
-                    <img src="./Asset/img/user.jpg" width="17%">
-                    <div class="star27"> 
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> 
-                    </div>
-                </div> 
-                <div class="pt13">
-                    Davichi <br>
-                    11111111111111111
-                 </div>
-            </div>
-            <div class="col-md-4 align">
-                <div class="user_star">
-                    <img src="./Asset/img/user.jpg" width="17%">
-                    <div class="star27">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                </div>
-                <div class="pt13"> 
-                    Davichi <br>
-                    1111111111111111
-                </div>
-            </div>
-        </div>
-        <div class=" mySlides row w3-animate-right">
-            <div class="col-md-4 align">
-                <div class="user_star">
-                    <img src="./Asset/img/user.jpg" width="17%">
-                    <div class="star27">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star "></span>
-                        <span class="fa fa-star "></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> 
-                    </div>
-                </div>
-                <div class="pt13"> 
-                    Davichi <br>
-                    22222222222222222
-                </div>   
-            </div>
-            <div class="col-md-4 feed1 align">
-                <div class="user_star">
-                    <img src="./Asset/img/user.jpg" width="17%"> 
-                    <div class="star27">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> 
-                    </div>
-                </div> 
-                <div class="pt13">
-                    Davichi <br>
-                    222222222222222222
-                </div>
-            </div>
-            <div class="col-md-4 align">
-                <div class="user_star">
-                    <img src="./Asset/img/user.jpg" width="17%">
-                    <div class="star27"> 
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span> 
-                    </div>
-                </div> 
-                <div class="pt13">
-                    Davichi <br>
-                    2222222222222222222222
-                </div>
-            </div>
-        </div>
-        <div class="mySlides row w3-animate-right">
-            <div class="col-md-4 align">
-                <div class="user_star">
-                    <img src="./Asset/img/user.jpg" width="17%">
-                    <div class="star27">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star "></span>
-                        <span class="fa fa-star "></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> 
-                    </div>
-                </div>
-                <div class="pt13"> 
-                    Davichi <br>
-                    33333333333333333333 
-                </div>     
-            </div>
-            <div class="col-md-4 feed1 align">
-                <div class="user_star">
-                    <img src="./Asset/img/user.jpg" width="17%">
-                    <div class="star27">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                </div>
-                <div class="pt13"> 
-                    Davichi <br>
-                    33333333333333333333333
-                </div>
-            </div>
-            <div class="col-md-4 align">
-                <div class="user_star">
-                    <img src="./Asset/img/user.jpg" width="17%"> 
-                    <div class="star27">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                </div>
-                <div class="pt13">
-                    Davichi <br>
-                    333333333333333333333
-                </div>  
-            </div>
-        </div>
-        <div style="text-align:center">
-            <span class="dot w3-animate-right" onclick="currentSlide(1)" ></span> 
-            <span class="dot w3-animate-right" onclick="currentSlide(2)"></span> 
-            <span class="dot w3-animate-right" onclick="currentSlide(3)"></span> 
-          </div>
-      </div>
-    <div class="mydiv1 container-fluid" >
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="mydiv2 col-md-10">
-                
-                <table class="tab1">
-                    <tr>
-                        <td>
-                            <div class="map">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3253162668493!2d106.66410831515317!3d10.786376992314802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed23c80767d%3A0x5a981a5efee9fd7d!2zNTkwIMSQLiBDw6FjaCBN4bqhbmcgVGjDoW5nIDgsIFBoxrDhu51uZyAxMSwgUXXhuq1uIDMsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1662781398945!5m2!1svi!2s" width="80%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </td>
-                        <td>
-                            <table class="tab2">
-                                <form action="" onsubmit="return kiemtra()">
-                                <tr >
-                                    <td></td>
-                                    <td><h1>Contact us</h1></td>
-                                    
-                                </tr>
-                                <tr class=" ">
-                                    <td class=" name">Full name:*</td>
-                                    <td class=""><input class="input_text" id="txtname" placeholder="Enter your name" type="text"></td>
-                                </tr>
-                                <tr >
-                                    <td class="text30 phone30">Phone:*</td>
-                                    <td><input class="input_text margin10" id="txtphone" placeholder="Enter your phone" type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td class="text30 mail30">Email:*</td>
-                                    <td><input class="input_text margin10" id="txtmail" placeholder="Enter your mail" type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td class="text30 address30">Address:*</td>
-                                    <td><input class="input_text margin10" id="txtadd" placeholder="Enter your address" type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td class="text30 message30">Message:*</td>
-                                    <td><textarea class="mess" id="txtmess" placeholder="Enter your message" name="" id="" cols="30" rows="10"></textarea></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><input type="submit" class="send" value="Send"></td>
-                                </tr>
-                            </form>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+  <div class="mydiv1 container-fluid" >
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="mydiv2 col-md-10">
+            
+            <table class="tab1">
+                <tr>
+                    <td>
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3253162668493!2d106.66410831515317!3d10.786376992314802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed23c80767d%3A0x5a981a5efee9fd7d!2zNTkwIMSQLiBDw6FjaCBN4bqhbmcgVGjDoW5nIDgsIFBoxrDhu51uZyAxMSwgUXXhuq1uIDMsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1662781398945!5m2!1svi!2s" width="80%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </td>
+                    <td>
+                        <table class="tab2">
+                            <form action="" onsubmit="return kiemtra()">
+                            <tr >
+                                <td></td>
+                                <td><h1>Contact us</h1></td>
+                                
+                            </tr>
+                            <tr class=" ">
+                                <td class=" name">Full name:*</td>
+                                <td class=""><input class="input_text" id="txtname" placeholder="Enter your name" type="text"></td>
+                            </tr>
+                            <tr >
+                                <td class="text30 phone30">Phone:*</td>
+                                <td><input class="input_text margin10" id="txtphone" placeholder="Enter your phone" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td class="text30 mail30">Email:*</td>
+                                <td><input class="input_text margin10" id="txtmail" placeholder="Enter your mail" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td class="text30 address30">Address:*</td>
+                                <td><input class="input_text margin10" id="txtadd" placeholder="Enter your address" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td class="text30 message30">Message:*</td>
+                                <td><textarea class="mess" id="txtmess" placeholder="Enter your message" name="" id="" cols="30" rows="10"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="submit" class="send" value="Send"></td>
+                            </tr>
+                        </form>
+                        </table>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
-    <script>
-        var slideIndex = 0;
-        showSlides();
-        var slides,dots;
-        
-        function showSlides() {
-            var i;
-            slides = document.getElementsByClassName("mySlides");
-            dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-               slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex> slides.length) {
-                slideIndex = 1;
-            }    
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "inline-flex";  
-            dots[slideIndex-1].className += " active";
-           setTimeout(showSlides, 5000); // Change image every 5gi seconds
-        }
-        
-        function currentSlide(index) {
-            if (index> slides.length) {
-                index = 1;
-            }
-            else if(index < 1){
-                index = slides.length;
-            }
-            for (i = 0; i < slides.length; i++) {
-               slides[i].style.display = "none";  
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[index-1].style.display = "inline-flex";  
-            dots[index-1].className += " active";
-        }
-    </script>
-</body>
-</html>
+</div>
+</div>
+  <!-- Swiper JS -->
+  
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 1,
+        loop: true,
+        loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+
