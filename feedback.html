@@ -109,6 +109,7 @@
             background: #D9D9D9;
             box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.25);
             border-radius: 20px;
+            padding-left: 10px;
         }
         .text{
             font-size: 60pt;
@@ -223,6 +224,8 @@
             background: #D9D9D9;
             box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
+            border: 0px;
+            padding-left: 10px;
         }
         .inputtext2{
             box-sizing: border-box;
@@ -231,6 +234,8 @@
             background: #D9D9D9;
             box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
+            border: 0px;
+            padding-left: 10px;
         }
         .inputtext3{
             box-sizing: border-box;
@@ -239,6 +244,8 @@
             background: #D9D9D9;
             box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
+            border: 0px;
+            padding-left: 10px;
            }
         .inputtext4{
             box-sizing: border-box;
@@ -247,6 +254,8 @@
             background: #D9D9D9;
             box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
+            border: 0px;
+            padding-left: 10px;
         }
 
         .myTable{
@@ -255,10 +264,12 @@
         .phone1{
             width:80%;
             margin-left:auto;
+            padding: 10px;
         }
         .name1{
             width:80%;
             margin-right:auto;
+            padding: 10px;
         }
         .grid-container {
             display: grid;
@@ -268,39 +279,49 @@
             margin-top: 20px;
             margin-right: 100px;
             padding: 10px;
+        
         }
 
           .grid-item1{  
             box-shadow: #D9D9D9;
             padding:0 50px;
-            width: 90%;
-      
+            width: 100%;
             box-shadow: #D9D9D9;
             margin-right: 10px;
             border-radius: 1px;
             box-shadow: 0px 0px 10px 2px black;
+            margin-left: 20px;
+      
           }
           .grid-item2{
-            width: 100%;
+            width: 90%;
             padding: 0 50px;      
-          
+         
+            margin-left: 80px;
           }
           .div10{
-       
-            width: 350px;
-            height: 60px;
+            width: 100%;
+            height: auto;
             background: #D9D9D9;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
             padding-top: 10px;
-            font-size: 36px;
+            padding-bottom: 10px;
+           
             }
  
             .name10{
                 font-size: 14px;
                 margin: 15px;
             }
-            
+            .submit1{
+              
+                border-radius: 5px;
+        
+            }
+            .submit10{
+                padding-top: 10px;
+            }    
            
     </style>
 
@@ -390,7 +411,7 @@
                                    
                                 </tr>
                                 <tr>
-                                    <td colspan="2" style="text-align: left;"><input type="submit" value="Submit"></td>
+                                    <td class="submit10" colspan="2" style="text-align: center;"><input class="submit1" type="submit" value="Submit"></td>
                                 </tr>
                             </table>
                         </form>
@@ -401,6 +422,7 @@
     
         </div>
     </div>
+    
     
     <script>
         addComment("Davichi01", "0123456789", "Trung học phổ thông ABC", "5");
@@ -443,11 +465,8 @@
             function addComment(name, phone, mess, rating) {
                 strHTML = '<div><div class="div7"><span class="txtname">' + name + '</span></div>';
                 strHTML += getHTMLRating(rating);
-               // strHTML += '<br>' + '<div>'<span class="txtMessage">' + mess + '</span>'</div>';
                strHTML += '<br>' + '<div class="div10"><span class="txtMessage">' + mess + '</span></div></div>';
                 var tmp = document.createElement('div');
-                //tmp.innerHTML = '<div class="adverts-container top30">' + name + '<div class="advert-carousel">' + 'Message' + '</div>' + '</div>';
-                //tmp.innerHTML = '<div class="txtame">' + name + '</div>' + '<div class="txtPhone">' + phone + '</div>';
                 tmp.innerHTML = strHTML;
                 document.getElementById("comment").appendChild(tmp.firstChild);
             }
