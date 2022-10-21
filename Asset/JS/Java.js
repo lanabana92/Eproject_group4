@@ -67,10 +67,13 @@ function myFunction(){
         alert("UserName: Student\nPassword:12345678")
     }
 }
+
+
 $(document).ready(function(){
     $(".btn").click(function(){
         $("#myModal").modal('hide');
         $('input:password').val('');
         $('input:text').val('');
-    });
+        $("#your-image").attr("src","Asset/Img/avatar.png");
+    }); 
 });
