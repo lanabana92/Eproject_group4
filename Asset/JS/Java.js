@@ -28,8 +28,8 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/Motor",{
             templateUrl:"motorcycle.html"
         })
-        .when("/About",{
-            templateUrl:"contact.html"
+        .when("/Account",{
+            templateUrl:"Account.html"
         });
     });
 
