@@ -31,10 +31,13 @@
         border: 0;
         background-color: unset;
         padding: 0px 10px;
-        width: 140px;
+        width: 160px;
         color:#4B67FC;
         font-weight: bold
        
+    }
+    .motorSelector3{
+        outline: none;
     }
     .motorSelector4{
         width:99%;
@@ -74,7 +77,7 @@
         width: 100%;
     }
     .promoBox{
-        width: 310px;
+        width: 320px;
         height: 93px;
         background-color: #D9D9D9;
         border-radius: 20px;
@@ -149,31 +152,157 @@
             padding: 20px;
             border-radius: 10px;
         }
+        
+        .arrow1{
+            font-size: 40px;
+        }
+        
+        .processDes{
+            text-align: center;
+        }
+        .Mcontent2{
+            height: 380px;
+            display: none;
+        }
+        .input_text1{
+            background-color: unset;
+            border: 0;
+            width: 90%;
+        }
+        .input_text1:focus{
+            outline: 0px;
+        }
+        .motorSelector5{
+            margin: auto;
+            width:80%;
+            height: 32px;
+            border-radius: 20px;
+            background-color: #d9d9d9;
+            border: 0;
+            padding: 0 10px;
+            justify-content: center;
+            display: flex;
+            line-height: 32px;
+        }
+        .payOption{
+            display: flex;
+        }
+        .Policytxt{
+            text-align: justify;
+            font-size: 11pt;
+        }
+        .paymentContainer{
+            width: 100%;
+            height: 1024px;
+            background-color:rgba(0, 0, 0, 0.8);
+            display: none;
+            z-index: 100;
+            position: fixed;
+            left:0;
 
+        }
+        .CInfo{
+            padding: 0 20px;
+            margin-top: 50px;
+            height: 320px;
+            width: 636px ;
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px 2px;
+        }
+        .CInfo table{
+            width: 100%;
+        }
+        .edit1{
+            margin-top: 60px;
+            margin-left: 20%;
+            width: 118px;
+            height: 38px;  
+            background-color: #65A3FF;
+            color: white;
+            border-radius: 20px;
+            font-size: 14pt;
+            border: 0px;
+        }
+        .leftbox2{
+            width: 100%;
+            padding-left: 20px;
+            height: 203px;
+        }
+        .leftbox1{
+            width: 100%;
+            height: 203px;
+        }
+        
 </style>
-<div class="container-fluid">
-    <!-- buy insurance form -->
+<div class="container-fluid" ng-controller="Ctr2">
+    <div class="paymentContainer" id="paymentContainer">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div>
+                    <div class="CInfo">
+                        <table>
+                            <tr>
+                                <td colspan="2">
+                                    <h3>Order information</h3>
+                                    <hr width="100%">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border-right:1px solid rgb(190, 190, 190); width: 50%;">
+                                    <div class="leftbox1">
+                                        <b>Contact</b>
+                                        <p style="margin-left:20px;">Full name: {{clientName}} <br>
+                                            Email: {{clientEmail}} <br> 
+                                            Phone: {{clientPhone}}<br>
+                                        </p>
+                                        <button class="edit1"><i class="bi bi-arrow-left"></i> Edit</button>
+                                    </div>
+                                </td>
+                                
+                                <td>
+                                    <div class="leftbox2">
+                                        <b>Insurance</b>
+                                        <p style="margin-left:20px;">
+                                            Type: <br>
+                                            License plate status: {{plateStatus}} <br>                                             
+                                            Option: {{option | myFilter}} <br>
+                                            License plate number: <br>
+                                            <input type="text">
+                                        </p>                                        
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- quote insurance form -->
     <div class="row MouterB">
         <div class="col-md-1"></div>
         <div class="col-md-10 position-relative Mbander">
-            <div class="Mcontent">
-                
+            <div class="Mcontent" id="inQuote">
+
                 <form action="">
                     <table>
                         <tr>
                             <td style="width: 50%;">
-                                <select class="motorSelector1">
-                                    <option value="Under 50cc">Under 50cc</option>
-                                    <option value="Above 50cc">Above 50cc</option>
-                                    <option value="Electric">Electric bike</option>
+                                <select onclick="discheck()" name="motortype" class="motorSelector1" id="motortype" ng-model="motorType">
+                                    <option value="60000" selected >Under 50cc</option>
+                                    <option value="70000">Above 50cc</option>
+                                    <option value="50000">Electric bike</option>
     
                                 </select>
                             </td>
                             <td>
-                                <select class="motorSelector1">
-                                    <option value="Under 50cc">Insurance for 3 years</option>
-                                    <option value="Above 50cc">Insurance for 2 years</option>
-                                    <option value="Electric">Insurance for 1 years</option>
+                                
+                                <select class="motorSelector1" id="nbDays" ng-model="option">
+                                    <option value="3" selected>Insurance for 3 years</option>
+                                    <option value="2">Insurance for 2 years</option>
+                                    <option value="1">Insurance for 1 years</option>
     
                                 </select>
                             </td>
@@ -183,27 +312,88 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <div class="motorSelector2"><input class="motorSelector3" type="date"> to <input type="date" name="" id=""></div>
+                                <div class="motorSelector2"><input class="motorSelector3" id="startDate" type="date"> to <input class="motorSelector3" type="text" id="endDate" readonly></div>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><input style class="myCheckbox" type="checkbox">occupant accident insurance: 20,000 VND/Year</td>
+                            <td colspan="2"><input style class="myCheckbox" id="occupant" type="checkbox" value="20000" disabled>occupant accident insurance: 20,000 VND/Year</td>
                         </tr>
                         <tr>
                             <td colspan="2"><b> Total cost (VAT included)</b></td>
                         </tr>
                         <tr>
-                            <td colspan="2"> <div class="motorSelector4"></div></td>
+                            <td colspan="2"> <div class="motorSelector4"><input style="text-align: center; color: #ffff;" class="motorSelector3" type="text" id="value" readonly></div> </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><button type="submit" class="MotorBut1">Next</button></td>
+                            <td colspan="2"><button type="submit" class="MotorBut1" id="next1" ng-click="Add()">Next</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+    <!-- customer input form  -->
+            <div class="Mcontent Mcontent2" id="clientForm">
+
+                <form>
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <div class="motorSelector2">
+                                    <input class="input_text1" placeholder="Your fullname" type="text" ng-model="clientName">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="motorSelector2">
+                                    <input class="input_text1" placeholder="Contact number" type="text" ng-model="clientPhone">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 50%;">
+                                <div class="motorSelector2">
+                                    <input class="input_text1" placeholder="Email address" type="text" ng-model="clientEmail">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="motorSelector2">
+                                    <input class="input_text1" placeholder="Vehicle register area" type="text" ng-model="clientCity">
+                                </div>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <select class="motorSelector2" ng-model="plateStatus">
+                                    <option value="">Licences plate status....</option>
+                                    <option value="Registered">Registered</option>
+                                    <option value="not yet register">not yet register</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 50%; text-align: left; padding-left: 20px;">Payment method: </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <select class="motorSelector5">
+                                    <option value="">Choose payment method</option>
+                                    <option value="cd" class="payOption">Credit/Debit card</option>
+                                    <option value="ATM">ATM Napas</option>
+                                    <option value="Cash">Cash</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" ><div style="display:flex; width: 90%; margin: auto;"><input style class="myCheckbox" type="checkbox" > <div class="Policytxt">I agree to <u>Financial Field's privacy policy</u>  and <u>contact policy</u> , and agree to receive communications from Financial Field and its partners until a formal request to decline.</div></div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit" class="MotorBut1" id="back1">Back</button> <button type="submit" class="MotorBut1" id="next2">Next</button></td>
                         </tr>
                     </table>
                 </form>
                 
             </div>
         </div>
-        
     </div>
     <!-- promotion -->
     <div class="col-lg-10 myPromotion">
@@ -212,25 +402,32 @@
                 <td style="width:33.33%;">
                     <div class="promoBox">
                         <img src="./Asset/img/dollaricon.webp" alt="">
-                        <p style="margin-left:20px">Sale off:  <br>
+                        <p class="fee" style="margin-left:20px">Sale off:  <br>
                         <b>Only 66.000 VND/year</b></p>
-                        <button class="nexti"><i class="bi bi-chevron-right "></i></button>
+                        <p class="fee" style="margin-left:20px; display:none;">
+                            <b>Fee will change depend on Vehicle</b></p>
+                        <button class="nexti" id="fee"><i class="bi bi-chevron-right "></i></button>
                     </div>
                 </td>
                 <td style="width:33.33%;">
                     <div class="promoBox">
                         <img src="./Asset/img/crown icon.webp" alt="">
-                        <p style="margin-left:20px">Compensation:  <br>
+                        <p class="compen" style="margin-left:20px">Compensation:  <br>
                             <b>up to 150 Million VND</b></p>
-                            <button class="nexti"><i class="bi bi-chevron-right "></i></button>
+                            <p class="compen" style="margin-left:20px; display: none;">
+                                <b>For person: 150mil VND and for vehicle 50mil VND </b></p>
+                            <button class="nexti" id="CompenB"><i class="bi bi-chevron-right "></i></button>
+                            
                     </div>
                 </td>
                 <td>
                     <div class="promoBox">
                         <img src="./Asset/img/card icon.webp" alt="">
-                        <p style="margin-left:20px">Payment Method:  <br>
+                        <p class="pay" style="margin-left:20px">Payment Method:  <br>
                             <b>Online</b></p>
-                            <button class="nexti"><i class="bi bi-chevron-right "></i></button>
+                        <p class="pay" style="margin-left:20px; display: none;">
+                            <b>receive electronic insurance </b></p>
+                            <button class="nexti" id="paybutton"><i class="bi bi-chevron-right "></i></button>
                     </div>
                 </td>
             </tr>
@@ -253,10 +450,12 @@
         </div>
         <div class="promoBox">
             <img src="./Asset/img/card icon.webp" alt="">
-            <p style="margin-left:20px">Payment Method:  <br>
-                <b>Online</b></p>
-                <button class="nexti"><i class="bi bi-chevron-right "></i></button>
+            <p id="pay" style="margin-left:20px">Payment Method:  <br>
+                <b>Online</b>
+            </p>
+                <button class="nexti" id="paybutton"><i class="bi bi-chevron-right"></i></button>
         </div>
+        
     </div>        
     <!-- process information -->
     <div class="processContainer">
@@ -296,17 +495,61 @@
                                 insurance prescribed by the State. All motor vehicle owners,
                                  individuals, organizations (including foreigners) owning motor vehicles in Vietnam must participate in order to protect and ensure the interests of third parties if they are unfortunately injured. and property caused by traffic accidents.</p>
                         </div>
-                        <div class="tab-pane fade contentbox3" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                        <div class="tab-pane fade contentbox3" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-                        <div class="tab-pane fade contentbox3" id="compensation" role="tabpanel" aria-labelledby="compensation-tab">ccccc</div>
+                        <div class="tab-pane fade contentbox3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            Motor vehicle owners participating in traffic and operating in the territory of the Socialist Republic of Vietnam.
+                        </div>
+                        <div class="tab-pane fade contentbox3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <ul>
+                                <li>The insurance validity begins and ends according to the period stated in the <b> Certificate of Insurance</b>.</li>
+                                <li>For two-wheeled, three-wheeled motorcycles, mopeds (including electric scooters) and vehicles of similar structure as prescribed by the Road Traffic Law, <b>the minimum insurance period is 1 year and maximum of 3 years</b> .</li>
+                                <li>During the valid period indicated on <b>the Certificate of Insurance</b> , if there is a transfer of motor vehicle ownership, all insurance benefits related to the civil liability of the old motor vehicle owner will still be valid for the owner. new motor vehicle.</li>
+                            
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade contentbox3" id="compensation" role="tabpanel" aria-labelledby="compensation-tab">
+                            <ul>
+                                <li>
+                                    The time limit for claiming compensation is <b>1 year</b>  from the date of the accident, except in case of delay due to objective and force majeure causes as prescribed by law.
+                                </li>
+                                <li>
+                                   <b>Within 5 working days from the date of the accident</b>  (except in case of force majeure), the insurance buyer and the insured must send the accident notice in writing or via electronic form to the insurance company. insurance industry.
+                                </li>
+                                <li>
+                                    The time limit for compensation payment of the insurer is <b>15 days</b>  from the date of receipt of a complete and valid insurance claim dossier and <b>no later than 30 days</b>  from the date of receipt of a complete insurance claim dossier. valid insurance in the event that the verification of records is required.
+                                </li>
+                                <li>
+                                    In case of refusal to indemnify, the insurer must notify in writing the insurance buyer and the insured the reason for the refusal within 30 days from the date of receipt of a complete claim dossier. valid insurance claim.
+                                </li>
+                                <li>
+                                    The dossier includes the documents specified in Article 15 of Decree No. 03/2021/ND-CP issued on January 15, 2021 by the Government on civil liability insurance of motor vehicle owners.
+                                </li>
+                            </ul>
+                        </div>
                         
                       </div>
                 </div>
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    <div>
-                        <img src="./Asset/img/dien-form.png" alt="">
-                        <img src="./Asset/img/thanh-toan.png" alt="">
-                        <img src="./Asset/img/nhan-hop-dong.png" alt="">
+                    <div class="Mprocess">
+                        <img src="./Asset/img/dien-form.png" alt="" width="200px">
+                        <div><i class="bi bi-arrow-right-short arrow1"></i></div>
+                        <img src="./Asset/img/thanh-toan.png" alt="" width="200px">
+                        <div><i class="bi bi-arrow-right-short arrow1"></i></div>
+                        <img src="./Asset/img/nhan-hop-dong.png" alt="" width="200px">
+                    </div>
+                    <div class="Mprocess2">
+                        <div>
+                            <h2 class="processDes">Step 1</h2>
+                            Fill in register form
+                        </div>
+                        <div>
+                            <h2 class="processDes">Step 2</h2>
+                            Pay insurance fee
+                        </div>
+                        <div>
+                            <h2 class="processDes">Step 3</h2>
+                            Recieved insurance<br> 
+                            contract
+                        </div>
                     </div>
                         
                 </div>
@@ -314,5 +557,125 @@
          </div>   
             
     </div>
-
+    <!-- Order information -->
+   
 </div>
+<script>
+$(document).ready(function(){
+  $("#next2").click(function(){
+    $("#paymentContainer").toggle();
+    
+    });
+    });
+
+$(document).ready(function(){
+  $("#next1").click(function(){
+    $("#clientForm").toggle();
+    $("#inQuote").toggle();
+    });
+    });
+
+$(document).ready(function(){
+  $("#back1").click(function(){
+    $("#clientForm").toggle();
+    $("#inQuote").toggle();
+    });
+    });
+    
+
+
+    $(document).ready(function(){
+  $("#fee").click(function(){
+    $(".fee").toggle();
+    });
+    });
+
+    $(document).ready(function(){
+  $("#paybutton").click(function(){
+    $(".pay").toggle();
+    });
+    });
+
+    $(document).ready(function(){
+  $("#CompenB").click(function(){
+    $(".compen").toggle();
+    });
+    });
+
+    $(document).on('change', "#startDate", function (e) {
+    e.preventDefault();
+        
+        var nbdays_string = $("#nbDays").val();
+        if (nbdays_string == 3){
+            nbdays_string = 1095;
+        } else if (nbdays_string == 2) {
+            nbdays_string = 730;
+        } else {
+            nbdays_string = 365;
+        }
+        var startDate_string = $("#startDate").val();
+        
+        var nbdays  = parseFloat( nbdays_string ) 
+        var startDate = moment(startDate_string);
+        
+        var endDate = startDate.add( nbdays, 'days').format('MM/DD/YYYY');
+
+        $("#endDate").val(endDate);
+
+
+    });
+    
+    $(document).on('change', "#motortype", function (e) {
+        e.preventDefault();
+        var motortype= $("#motortype").val();
+        var years = $("#nbDays").val();
+        var value = parseFloat(motortype) * parseFloat(years);
+
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'VND',
+            });
+        $("#value").val(formatter.format(value))
+    });
+
+    $(document).on('change', "#nbDays", function (e) {
+        e.preventDefault();
+        var motortype= $("#motortype").val();
+        var years = $("#nbDays").val();       
+        var value = parseFloat(motortype) * parseFloat(years);
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'VND',
+            });
+        $("#value").val(formatter.format(value))
+    });
+
+    $(document).on('change', "#occupant", function (e) {
+        e.preventDefault();
+        var motortype= $("#motortype").val();
+        var years = $("#nbDays").val();       
+        var value = parseFloat(motortype) * parseFloat(years);
+        if ($("#occupant").is(':checked')){
+            var occupant = 20000;
+        } else {
+            occupant = 0;
+        }
+        var value = parseFloat(value) + parseFloat(occupant);
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'VND',
+            });
+        $("#value").val(formatter.format(value))
+    });
+
+    function discheck(){
+        var value1 = document.getElementById("value").value;
+        if ( value1 == "" ) {
+        document.getElementById("occupant").setAttribute("disabled","disabled");
+        } else {
+        document.getElementById("occupant").removeAttribute("disabled");
+        }
+    } 
+
+</script>
+

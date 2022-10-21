@@ -28,8 +28,13 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/Motor",{
             templateUrl:"motorcycle.html"
         })
+<<<<<<< HEAD
         .when("/Account",{
             templateUrl:"Account.html"
+=======
+        .when("/About",{
+            templateUrl:"About.html"
+>>>>>>> 74a9abd87d3eb7bccb96828fe19f35b973e0d4ef
         });
     });
 
@@ -46,3 +51,16 @@ var app = angular.module('myApp',['ngRoute'])
             $scope.car9 = response.data.menu9;
         })            
     })
+
+    app.controller("Ctr2",function($scope){
+         $scope.motorType = "60000";   
+         $scope.option= "3";
+    })
+
+//     app.filter('myFilter',function(){
+//         return function () {
+//         $scope.year = "years";
+//     }
+// })
+    
+    
