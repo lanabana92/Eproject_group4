@@ -96,18 +96,17 @@
   
         <div class="login-box">
     <h2>Login</h2>
-    <form>
+    <form name="myForm">
       <div class="user-box">
-        <input type="text" placeholder="Username" name="username" required>
+        <input type="text"  name="Uname" required>
         <label>Username</label>
       </div>
       <div class="user-box">
-        <input type="password" name="psw" required>
+        <input type="password" name="Pass" required>
         <label>Password</label>
       </div>
-      <a href="#!Account">
-        Submit
-      </a>
+        
+       <input type="button" class="btn btn-primary dropdown-toggle" name="log" id="logButton" value ="Submit" onclick="myFunction()">
     </form>
   </div>
   
