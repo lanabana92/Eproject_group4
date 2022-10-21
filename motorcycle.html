@@ -195,7 +195,7 @@
             width: 100%;
             height: 1024px;
             background-color:rgba(0, 0, 0, 0.8);
-            display: none;
+            /* display: none; */
             z-index: 100;
             position: fixed;
             left:0;
@@ -233,14 +233,54 @@
             width: 100%;
             height: 203px;
         }
-        
+        #next2:disabled{
+            background-color: #5e5e5e;
+
+        }
+        .paymentSheet{
+            padding: 20px 20px;
+            margin-top: 50px;
+            height: 700px;
+            width: 500px ;
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px 2px;
+        }
+        .container2{
+            display: flex;
+            justify-content: space-around;
+        }
+        .cardType{
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        .cardType img:active{
+            outline: #4B67FC;
+        }
+        .list-item-clicked{    
+            border: px solid rgb(34, 3, 233);
+        }
+        .cardInfo1{
+            margin-top: 30px;
+            
+        }
+        .cardInfo1 table td{
+            
+            padding: 0 20px;
+        }
+        .supInput{
+            height:40px;
+            
+        }
 </style>
 <div class="container-fluid" ng-controller="Ctr2">
+<!-- payment container -->
     <div class="paymentContainer" id="paymentContainer">
         <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="container2">
                     <div class="CInfo">
                         <table>
                             <tr>
@@ -257,24 +297,87 @@
                                             Email: {{clientEmail}} <br> 
                                             Phone: {{clientPhone}}<br>
                                         </p>
-                                        <button class="edit1"><i class="bi bi-arrow-left"></i> Edit</button>
+                                        <button class="edit1" id="editbtn"><i class="bi bi-arrow-left" ></i> Edit</button>
                                     </div>
                                 </td>
                                 
                                 <td>
-                                    <div class="leftbox2">
+                                    <div class="leftbox2" ng-controller="Ctr3">
                                         <b>Insurance</b>
                                         <p style="margin-left:20px;">
-                                            Type: <br>
+                                            Type: {{type}} <br>
                                             License plate status: {{plateStatus}} <br>                                             
-                                            Option: {{option | myFilter}} <br>
+                                            Option: {{year}} <br>
                                             License plate number: <br>
-                                            <input type="text">
+                                            <input type="text" placeholder="Please enter your plate number">
                                         </p>                                        
                                     </div>
                                 </td>
                             </tr>
                         </table>
+                    </div>
+                    <div class="paymentSheet">
+                        <div>
+                            <h3 style="margin-bottom:20px;margin-left: 10px;">Card Detail</h3>
+                            <p style="margin-left:10px">Card type</p>
+                            
+                            <div class="cardType">
+                                <div class="mdc-list-item"><img src="./Asset/img/Visa.png" width="130px" alt=""></div>
+                                <div class="mdc-list-item"><img src="./Asset/img/mastercard.png" width="130px" alt=""></div>
+                                <div class="mdc-list-item"><img src="./Asset/img/Amex.png" width="130px"alt=""></div>
+                            </div>
+                            <div class="cardInfo1">
+                                <table style="width:100%;" ng-controller="Ctr3">
+                                    <tr>
+                                        <td colspan="2">
+                                            <div >
+                                                Name on card
+                                                <input type="text" class="motorSelector2 supInput">
+                                            </div>                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td  colspan="2">
+                                            <div style="margin-top:20px;">
+                                            Card number
+                                            <input type="text" class="motorSelector2 supInput">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:50%">
+                                            <div style="margin-top:20px;">
+                                                Expiration date
+                                                <input type="text" class="motorSelector2 supInput">
+                                            </div>
+                                        </td>                                            
+                                        <td>
+                                            <div style="margin-top:20px; ">
+                                                CVV
+                                                <input type="text" class="motorSelector2 supInput">
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td colspan="2"><hr style="margin-top:30px"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Order</td>
+                                        <td style="text-align: right">{{orderValue}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Order</td>
+                                        <td style="text-align: right">18500 VND</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>                                   
+                                </table>
+                                
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -291,6 +394,7 @@
                         <tr>
                             <td style="width: 50%;">
                                 <select onclick="discheck()" name="motortype" class="motorSelector1" id="motortype" ng-model="motorType">
+                                    <option value="0" >Choose vehicle type</option> 
                                     <option value="60000" selected >Under 50cc</option>
                                     <option value="70000">Above 50cc</option>
                                     <option value="50000">Electric bike</option>
@@ -300,7 +404,8 @@
                             <td>
                                 
                                 <select class="motorSelector1" id="nbDays" ng-model="option">
-                                    <option value="3" selected>Insurance for 3 years</option>
+                                    <option value="0">choose insurance plans</option>
+                                    <option value="3" >Insurance for 3 years</option>
                                     <option value="2">Insurance for 2 years</option>
                                     <option value="1">Insurance for 1 years</option>
     
@@ -322,10 +427,10 @@
                             <td colspan="2"><b> Total cost (VAT included)</b></td>
                         </tr>
                         <tr>
-                            <td colspan="2"> <div class="motorSelector4"><input style="text-align: center; color: #ffff;" class="motorSelector3" type="text" id="value" readonly></div> </td>
+                            <td colspan="2"> <div class="motorSelector4"><input style="text-align: center; color: #ffff;" class="motorSelector3" type="text" id="value" ng-model="orderValue" value="10000" readonly></div> </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><button type="submit" class="MotorBut1" id="next1" ng-click="Add()">Next</button></td>
+                            <td colspan="2"><button type="button" class="MotorBut1" id="next1" ng-click="Add()">Next</button></td>
                         </tr>
                     </table>
                 </form>
@@ -333,36 +438,38 @@
     <!-- customer input form  -->
             <div class="Mcontent Mcontent2" id="clientForm">
 
-                <form>
+                <form action="" name="myForm">
                     <table>
                         <tr>
                             <td style="width: 50%;">
                                 <div class="motorSelector2">
-                                    <input class="input_text1" placeholder="Your fullname" type="text" ng-model="clientName">
+                                    <input class="input_text1" placeholder="Your fullname" name="clientName" type="text" ng-model="clientName" required>
                                 </div>
                             </td>
                             <td>
                                 <div class="motorSelector2">
-                                    <input class="input_text1" placeholder="Contact number" type="text" ng-model="clientPhone">
+                                    <input class="input_text1" placeholder="Contact number" type="text" name="clientPhone" ng-model="clientPhone" required pattern="\d{11}"> <br>
+                                    
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td style="width: 50%;">
                                 <div class="motorSelector2">
-                                    <input class="input_text1" placeholder="Email address" type="text" ng-model="clientEmail">
+                                    <input class="input_text1" placeholder="Email address" type="text" name="clientEmail" ng-model="clientEmail" pattern="\w+@\w+[.][a-z]{2,3}" required>
+                                    
                                 </div>
                             </td>
                             <td>
                                 <div class="motorSelector2">
-                                    <input class="input_text1" placeholder="Vehicle register area" type="text" ng-model="clientCity">
+                                    <input class="input_text1" placeholder="Vehicle register area" type="text" name="clientCity" ng-model="clientCity" req>
                                 </div>
                             </td>
                             
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <select class="motorSelector2" ng-model="plateStatus">
+                                <select class="motorSelector2" name="plateStatus" ng-model="plateStatus" required>
                                     <option value="">Licences plate status....</option>
                                     <option value="Registered">Registered</option>
                                     <option value="not yet register">not yet register</option>
@@ -371,7 +478,14 @@
                         </tr>
                         <tr>
                             <td style="width: 50%; text-align: left; padding-left: 20px;">Payment method: </td>
-                            <td></td>
+                            <td><span class="error" style="color: red;" ng-show="myForm.clientPhone.$dirty && myForm.clientPhone.$error.pattern">Invalid Phone number</span>
+                                <span class="error" style="color: red;" ng-show="myForm.clientEmail.$dirty && myForm.clientEmail.$error.pattern">Invalid email</span>
+                                <span class="error" style="color: red;" ng-show="myForm.clientName.$dirty && myForm.clientName.$error.required">Full name is required</span>
+                                <span class="error" style="color: red;" ng-show="myForm.clientCity.$dirty && myForm.clientCity.$error.required">City is required</span>
+                                <span class="error" style="color: red;" ng-show="myForm.plateStatus.$dirty && myForm.plateStatus.$error.required">plate status is required</span>
+                                <span class="error" style="color: red;" ng-show="myForm.checkbox.$error.required">Please reader and agree policy</span>
+                            </td>
+                            
                         </tr>
                         <tr>
                             <td colspan="2">
@@ -384,10 +498,17 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" ><div style="display:flex; width: 90%; margin: auto;"><input style class="myCheckbox" type="checkbox" > <div class="Policytxt">I agree to <u>Financial Field's privacy policy</u>  and <u>contact policy</u> , and agree to receive communications from Financial Field and its partners until a formal request to decline.</div></div></td>
+                            <td colspan="2" ><div style="display:flex; width: 90%; margin: auto;"><input style class="myCheckbox" name="checkbox" ng-model="checkbox" type="checkbox" required> <div class="Policytxt">I agree to <u>Financial Field's privacy policy</u>  and <u>contact policy</u> , and agree to receive communications from Financial Field and its partners until a formal request to decline.</div></div></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><button type="submit" class="MotorBut1" id="back1">Back</button> <button type="submit" class="MotorBut1" id="next2">Next</button></td>
+                            <td colspan="2"><button type="button" class="MotorBut1" id="back1">Back</button> 
+                                <button type="button" class="MotorBut1" id="next2"
+                                ng-disabled="myForm.clientEmail.$error.pattern || myForm.clientEmail.$error.required || myForm.clientPhone.$error.pattern
+                                || myForm.clientPhone.$error.required
+                                || myForm.clientCity.$error.required
+                                || myForm.clientName.$error.required
+                                || myForm.plateStatus.$error.required
+                                || myForm.checkbox.$error.required">Next</button></td>
                         </tr>
                     </table>
                 </form>
@@ -561,10 +682,22 @@
    
 </div>
 <script>
+$('.mdc-list-item').on("click",function(){
+    var isClicked = $(this).hasClass("list-item-clicked"); // am I clicked?
+    $('.mdc-list-item').removeClass("list-item-clicked");  // un-click everything
+    if(!isClicked)
+        $(this).toggleClass("list-item-clicked"); // click me if needed
+})
+
+$(document).ready(function(){
+  $("#editbtn").click(function(){
+    $("#paymentContainer").toggle();
+    });
+    });
+
 $(document).ready(function(){
   $("#next2").click(function(){
     $("#paymentContainer").toggle();
-    
     });
     });
 
@@ -630,7 +763,7 @@ $(document).ready(function(){
         var motortype= $("#motortype").val();
         var years = $("#nbDays").val();
         var value = parseFloat(motortype) * parseFloat(years);
-
+        
         const formatter = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'VND',
@@ -676,6 +809,4 @@ $(document).ready(function(){
         document.getElementById("occupant").removeAttribute("disabled");
         }
     } 
-
 </script>
-
