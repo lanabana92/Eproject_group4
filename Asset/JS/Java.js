@@ -62,9 +62,23 @@ var app = angular.module('myApp',['ngRoute'])
     })
 
     
-         
-        
-       
     
-    
-    
+function myFunction(){
+    var un = document.forms["myForm"]["Uname"].value;
+    var pw = document.forms["myForm"]["Pass"].value;
+    if(un=="Student" && pw=="12345678"){
+        window.location.href="#!Account"
+    }else{
+        alert("UserName: Student\nPassword:12345678")
+    }
+}
+
+
+$(document).ready(function(){
+    $(".btn").click(function(){
+        $("#myModal").modal('hide');
+        $('input:password').val('');
+        $('input:text').val('');
+        $("#your-image").attr("src","Asset/Img/avatar.png");
+    }); 
+});
