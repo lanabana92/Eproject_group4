@@ -28,8 +28,8 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/Motor",{
             templateUrl:"motorcycle.html"
         })
-        .when("/Account",{
-            templateUrl:"Account.html"
+        .when("/About",{
+            templateUrl:"About.html"
         });
     });
 
@@ -51,10 +51,7 @@ var app = angular.module('myApp',['ngRoute'])
          $scope.motorType = "0";   
          $scope.option= "0";
          
-    })
-    
-    app.controller("Ctr3",function($scope){
-        $scope.year = $scope.option + " years";
+         $scope.year = $scope.option + " years";
         if($scope.motorType == "60000"){
             $scope.type = "Under 50cc"
        } else if ($scope.motorType == "70000"){
@@ -63,22 +60,9 @@ var app = angular.module('myApp',['ngRoute'])
             $scope.type = "Electric"
        }
     })
+         
+        
        
     
     
-function myFunction(){
-    var un = document.forms["myForm"]["Uname"].value;
-    var pw = document.forms["myForm"]["Pass"].value;
-    if(un=="Student" && pw=="12345678"){
-        window.location.href="#!Account"
-    }else{
-        alert("UserName: Student\nPassword:12345678")
-    }
-}
-$(document).ready(function(){
-    $(".btn").click(function(){
-        $("#myModal").modal('hide');
-        $('input:password').val('');
-        $('input:text').val('');
-    });
-});
+    
