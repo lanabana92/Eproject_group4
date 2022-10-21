@@ -273,6 +273,31 @@
             height:40px;
             
         }
+        .motorSelector11{
+        border: 0;
+        background-color: unset;
+        padding: 0px 10px;
+        width: 160px;
+        
+        outline: none;
+       
+    }
+    .checkout{
+
+            margin-top: 20px;
+            width: 100%;
+            height: 50px;  
+            background-color: #65A3FF;
+            color: white;
+            border-radius: 20px;
+            font-size: 14pt;
+            border: 0px;
+    }
+    .checkarrow{
+        float: right;
+        margin-right: 20px;
+        
+    }
 </style>
 <div class="container-fluid" ng-controller="Ctr2">
 <!-- payment container -->
@@ -327,7 +352,7 @@
                                 <div class="mdc-list-item"><img src="./Asset/img/Amex.png" width="130px"alt=""></div>
                             </div>
                             <div class="cardInfo1">
-                                <table style="width:100%;" ng-controller="Ctr3">
+                                <table style="width:100%;" >
                                     <tr>
                                         <td colspan="2">
                                             <div >
@@ -362,17 +387,30 @@
                                         <td colspan="2"><hr style="margin-top:30px"></td>
                                     </tr>
                                     <tr>
-                                        <td>Order</td>
-                                        <td style="text-align: right">{{orderValue}}</td>
+                                        
+                                            <td>Order</td>
+                                            <td style="text-align: right"><input style="text-align: right; margin-top: 10px; " class="motorSelector11" type="text" id="value2" readonly></td>
+                                       
+                                        
                                     </tr>
                                     <tr>
-                                        <td>Order</td>
-                                        <td style="text-align: right">18500 VND</td>
+                                        
+                                            <td>Tax</td>
+                                            <td style="text-align: right"><input style="text-align: right; margin-top: 10px; " class="motorSelector11" type="text" id="value3" readonly></td>
+                                        
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>                                   
+                                       
+                                        <td>Total</td>
+                                        <td style="text-align: right"><input style="text-align: right; margin-top: 10px; " class="motorSelector11" type="text" id="value4" readonly></td>
+                                       
+                                    </tr>            
+                                    <tr>
+                                        <td colspan="2">
+                                            <button class="checkout"  id=""> <input  class="motorSelector11" style="color:white ;" type="text" id="value5" readonly> Check out <i class="bi bi-arrow-right checkarrow"></i></button>
+
+                                        </td>
+                                    </tr>                       
                                 </table>
                                 
                                 
@@ -394,8 +432,8 @@
                         <tr>
                             <td style="width: 50%;">
                                 <select onclick="discheck()" name="motortype" class="motorSelector1" id="motortype" ng-model="motorType">
-                                    <option value="0" >Choose vehicle type</option> 
-                                    <option value="60000" selected >Under 50cc</option>
+                                     
+                                    <option value="60000" selected>Under 50cc</option>
                                     <option value="70000">Above 50cc</option>
                                     <option value="50000">Electric bike</option>
     
@@ -404,8 +442,8 @@
                             <td>
                                 
                                 <select class="motorSelector1" id="nbDays" ng-model="option">
-                                    <option value="0">choose insurance plans</option>
-                                    <option value="3" >Insurance for 3 years</option>
+                                    
+                                    <option value="3" selected >Insurance for 3 years</option>
                                     <option value="2">Insurance for 2 years</option>
                                     <option value="1">Insurance for 1 years</option>
                                 </select>
@@ -426,7 +464,7 @@
                             <td colspan="2"><b> Total cost (VAT included)</b></td>
                         </tr>
                         <tr>
-                            <td colspan="2"> <div class="motorSelector4"><input style="text-align: center; color: #ffff;" class="motorSelector3" type="text" id="value" ng-model="orderValue" readonly></div> </td>
+                            <td colspan="2"> <div class="motorSelector4"><input style="text-align: center; color: #ffff;" class="motorSelector3" type="text" id="value" readonly></div> </td>
                         </tr>
                         <tr>
                             <td colspan="2"><button type="button" class="MotorBut1" id="next1" ng-click="Add()">Next</button></td>
@@ -762,12 +800,18 @@ $(document).ready(function(){
         var motortype= $("#motortype").val();
         var years = $("#nbDays").val();
         var value = parseFloat(motortype) * parseFloat(years);
-        
+        var tax = value * 0.1;
+        var total = value + tax;
+
         const formatter = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'VND',
             });
         $("#value").val(formatter.format(value))
+        $("#value2").val(formatter.format(value))
+        $("#value3").val(formatter.format(tax))
+        $("#value4").val(formatter.format(total))
+        $("#value5").val(formatter.format(total))
     });
 
     $(document).on('change', "#nbDays", function (e) {
@@ -775,11 +819,19 @@ $(document).ready(function(){
         var motortype= $("#motortype").val();
         var years = $("#nbDays").val();       
         var value = parseFloat(motortype) * parseFloat(years);
+        var tax = value * 0.1;
+        var total = value + tax;
+
         const formatter = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'VND',
             });
         $("#value").val(formatter.format(value))
+        $("#value2").val(formatter.format(value))
+        $("#value3").val(formatter.format(tax))
+        $("#value4").val(formatter.format(total))
+        $("#value5").val(formatter.format(total))
+
     });
 
     $(document).on('change', "#occupant", function (e) {
@@ -793,17 +845,24 @@ $(document).ready(function(){
             occupant = 0;
         }
         var value = parseFloat(value) + parseFloat(occupant);
+        var tax = value * 0.1;
+        var total = value + tax;
+
         const formatter = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'VND',
             });
         $("#value").val(formatter.format(value))
+        $("#value2").val(formatter.format(value))
+        $("#value3").val(formatter.format(tax))
+        $("#value4").val(formatter.format(total))
+        $("#value5").val(formatter.format(total))
     });
 
     function discheck(){
         var value1 = document.getElementById("value").value;
         if ( value1 == "" ) {
-        document.getElementById("occupant").setAttribute("disabled","disabled");
+        document.getElementById("occupant").setAttribute("disabled");
         } else {
         document.getElementById("occupant").removeAttribute("disabled");
         }
