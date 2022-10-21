@@ -28,8 +28,8 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/Motor",{
             templateUrl:"motorcycle.html"
         })
-        .when("/About",{
-            templateUrl:"About.html"
+        .when("/Account",{
+            templateUrl:"Account.html"
         });
     });
 
@@ -66,4 +66,19 @@ var app = angular.module('myApp',['ngRoute'])
        
     
     
-    
+function myFunction(){
+    var un = document.forms["myForm"]["Uname"].value;
+    var pw = document.forms["myForm"]["Pass"].value;
+    if(un=="Student" && pw=="12345678"){
+        window.location.href="#!Account"
+    }else{
+        alert("UserName: Student\nPassword:12345678")
+    }
+}
+$(document).ready(function(){
+    $(".btn").click(function(){
+        $("#myModal").modal('hide');
+        $('input:password').val('');
+        $('input:text').val('');
+    });
+});
