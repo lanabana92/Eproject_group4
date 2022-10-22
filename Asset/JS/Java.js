@@ -28,9 +28,13 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/Motor",{
             templateUrl:"motorcycle.html"
         })
+        .when("/Account",{
+            templateUrl:"Account.html"
+        })
         .when("/About",{
             templateUrl:"About.html"
         });
+        
     });
 
     app.controller("Ctr",function($scope,$http){
@@ -69,7 +73,7 @@ function myFunction(){
     if(un=="Student" && pw=="12345678"){
         window.location.href="#!Account"
     }else{
-        alert("UserName: Student\nPassword:12345678")
+        alert("UserName:Student\nPassword:12345678")
     }
 }
 
@@ -79,6 +83,7 @@ $(document).ready(function(){
         $("#myModal").modal('hide');
         $('input:password').val('');
         $('input:text').val('');
+        $("#textlogo").val('Student');
         $("#your-image").attr("src","Asset/Img/avatar.png");
     }); 
 });

@@ -14,14 +14,21 @@
 
     </div>
     <div class="grid-item2">
-        <div class="profile-pic">
-          <label class="-label" for="file">
-            <span class="glyphicon glyphicon-camera"></span>
-            <span>Change Image</span>
-          </label>
-          <input id="file" type="file" onchange="loadFile(event)"/>
-          <img src="Asset/Img/avatar.png" id="output" width="200" />
-        </div>
+      <div class="row">
+        <div class="small-12 medium-2 large-2 columns">
+          <div class="circle">
+            <!-- User Profile Image -->
+            <img class="profile-pic" src="Asset/Img/avatar.png">
+     
+            <!-- Default Image -->
+            <!-- <i class="fa fa-user fa-5x"></i> -->
+          </div>
+          <div class="p-image">
+            <i class="fa fa-camera upload-button"></i>
+             <input class="file-upload" type="file" accept="image/*"/>
+          </div>
+       </div>
+     </div>
         Original password <input type="text" value=""><br>
         New password <input type="text" value=""><br>
         Confrim password <input type="text" value=""><br>
@@ -53,7 +60,41 @@
     </div>
 </div>
   <style>
-    
+
+.profile-pic {
+    max-width: 180px;
+    max-height: 180px;
+    display: block;
+    border-radius: 50%;
+}
+
+.file-upload {
+    display: none;
+}
+.row{
+  margin-bottom: 10px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.p-image {
+  margin-top: -40px;
+  margin-left: 150px;
+  color: #3426cb;
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.p-image:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.upload-button {
+  font-size: 1.2em;
+}
+
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #999;
+}
   .grid-container {
     display: grid;
     grid-template-columns: auto auto;
@@ -75,14 +116,14 @@ border-radius: 10px;
   }
   
   .grid-item1 {
-      width: 450px;
+      width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
     font-size: 20px;
   border-radius: 30px;
   margin-right: 100px;
   }
   .grid-item2 {
-      width: 450px;
+      width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
     font-size: 20px;
   border-radius: 30px;
@@ -117,12 +158,30 @@ border-radius: 10px;
     margin-top: 20px;
     text-align: center;
 }
+</style>
+<script>
+$(document).ready(function() {
+
+    
+var readURL = function(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('.profile-pic').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 
 
-  </style>
-  <script>
-    var loadFile = function (event) {
-  var image = document.getElementById("output");
-  image.src = URL.createObjectURL(event.target.files[0]);
-};
+$(".file-upload").on('change', function(){
+    readURL(this);
+});
+
+$(".upload-button").on('click', function() {
+   $(".file-upload").click();
+});
+});
   </script>
