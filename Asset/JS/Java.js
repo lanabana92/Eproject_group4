@@ -28,8 +28,8 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/Motor",{
             templateUrl:"motorcycle.html"
         })
-        .when("/Account",{
-            templateUrl:"Account.html"
+        .when("/About",{
+            templateUrl:"About.html"
         });
     });
 
@@ -48,13 +48,10 @@ var app = angular.module('myApp',['ngRoute'])
     })
 
     app.controller("Ctr2",function($scope){
-         $scope.motorType = "0";   
-         $scope.option= "0";
+         $scope.motorType = "60000";   
+         $scope.option= "3";
          
-    })
-    
-    app.controller("Ctr3",function($scope){
-        $scope.year = $scope.option + " years";
+         $scope.year = $scope.option + " years";
         if($scope.motorType == "60000"){
             $scope.type = "Under 50cc"
        } else if ($scope.motorType == "70000"){
@@ -63,7 +60,7 @@ var app = angular.module('myApp',['ngRoute'])
             $scope.type = "Electric"
        }
     })
-       
+
     
     
 function myFunction(){
