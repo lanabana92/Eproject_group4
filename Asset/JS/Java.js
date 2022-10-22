@@ -28,9 +28,13 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/Motor",{
             templateUrl:"motorcycle.html"
         })
+        .when("/Account",{
+            templateUrl:"Account.html"
+        })
         .when("/About",{
             templateUrl:"About.html"
         });
+        
     });
 
     app.controller("Ctr",function($scope,$http){
