@@ -72,7 +72,7 @@ function myFunction(){
     if(un=="Student" && pw=="12345678"){
         window.location.href="#!Account"
     }else{
-        alert("UserName: Student\nPassword:12345678")
+        alert("UserName:Student\nPassword:12345678")
     }
 }
 
@@ -82,6 +82,7 @@ $(document).ready(function(){
         $("#myModal").modal('hide');
         $('input:password').val('');
         $('input:text').val('');
+        $("#textlogo").val('Student');
         $("#your-image").attr("src","Asset/Img/avatar.png");
     }); 
 });
