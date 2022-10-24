@@ -16,7 +16,7 @@
     <div class="grid-item2">
       <div class="row">
         <div class="small-12 medium-2 large-2 columns">
-          <div class="circle animate__animated animate__zoomIn" >
+          <div class="circle" >
             <!-- User Profile Image -->
             <img class="profile-pic" src="Asset/Img/avatar.png">
      
@@ -50,12 +50,12 @@
          Car usage under 3 years<br>
          <b>Insurance fee:</b> 52.234.000VND<br>
     </div>
-      <div class="grid-item4 animate__animated animate__backInRight">
+      <div class="grid-item4  animate__backInRight">
         <img src="Asset/Img/lammmmm.jpg" class="img2">
       </div>
     </div>
 </div>
-<div class="grid-container2 animate__animated animate__backInUp">
+<div class="grid-container2">
   <div class="grid-item3"><br>
     
     <div class="btn-group">
@@ -68,7 +68,7 @@
       </ul>
   </div>
   </div>
-    <div class="grid-item5 animate__animated animate__backInUp">
+    <div class="grid-item5 animate__animated animate__fadeInDown">
       <div class="btn-group">
         <button  type="button"class="bt2" data-bs-toggle="dropdown"><i id="cart2" class="fa-sharp fa-solid fa-cart-plus" ></i></button>
         <ul class="dropdown-menu">
@@ -81,28 +81,7 @@
     </div>
   </div>
 </div>
-<script>
-  function checkPasswordMatch() {
-      var password = $("#txtNewPassword").val();
-      var confirmPassword = $("#txtConfirmPassword").val();
-      if (password != confirmPassword)
-          $("#CheckPasswordMatch").html("Passwords does not match!");
-      else
-          $("#CheckPasswordMatch").html("Passwords match.");
-  }
-  function checkPasswordMatch1() {
-      var password = $("#txtNewPassword").val();
-      var confirmPassword = $("#txtConfirmPassword").val();
-      if (password != confirmPassword)
-          alert("Passwords does not match!");
-      else
-          alert("SUCCESSFULLY");
-  }
-  $(document).ready(function () {
-     $("#txtConfirmPassword").keyup(checkPasswordMatch);
-  });
 
-  </script>
   <style>
   .bt2{
       border: 0;
@@ -311,4 +290,24 @@ $(".upload-button").on('click', function() {
    $(".file-upload").click();
 });
 });
+  function checkPasswordMatch() {
+      var password = $("#txtNewPassword").val();
+      var confirmPassword = $("#txtConfirmPassword").val();
+      if (password != confirmPassword)
+          $("#CheckPasswordMatch").html("Passwords does not match!");
+      else
+          $("#CheckPasswordMatch").html("Passwords match.");
+  }
+  function checkPasswordMatch1() {
+      var password = $("#txtNewPassword").val();
+      var confirmPassword = $("#txtConfirmPassword").val();
+      if (password != confirmPassword)
+          alert("Passwords does not match!");
+      else
+          alert("SUCCESSFULLY");
+  }
+  $(document).ready(function () {
+     $("#txtConfirmPassword").keyup(checkPasswordMatch);
+  });
+
   </script>
