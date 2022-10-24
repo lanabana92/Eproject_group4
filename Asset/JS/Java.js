@@ -70,20 +70,23 @@ var app = angular.module('myApp',['ngRoute'])
 function myFunction(){
     var un = document.forms["myForm"]["Uname"].value;
     var pw = document.forms["myForm"]["Pass"].value;
+    var txt = "Student";
     if(un=="Student" && pw=="12345678"){
-        window.location.href="#!Account"
+        window.location.href="#!Account";
+        document.getElementById("textlogo").value = txt;
+        document.getElementById("your-image").src="Asset/Img/avatar.png";
     }else{
-        alert("UserName:Student\nPassword:12345678")
+        alert("UserName:Student\nPassword:12345678");
     }
+	
 }
-
-
+    
+  
 $(document).ready(function(){
     $(".btn").click(function(){
         $("#myModal").modal('hide');
         $('input:password').val('');
-        $('input:text').val('');
-        $("#textlogo").val('Student');
-        $("#your-image").attr("src","Asset/Img/avatar.png");
+        $('input:text11').val('');
     }); 
 });
+
