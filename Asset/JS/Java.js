@@ -85,7 +85,7 @@ function myFunction(){
 $(document).ready(function(){
     $(".btn").click(function(){
         $("#myModal").modal('hide');
-        $('input:password').val('');
+        $('input:password').val('12345678');
         $('input:text11').val('');
     }); 
 });
