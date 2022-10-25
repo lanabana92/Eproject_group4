@@ -29,10 +29,10 @@
           </div>
        </div>
      </div>
-        <div class="mydiv5"><b id="b2">Original password:</b><input type="password" placeholder=" Enter password" class="inputtext1"></div> 
-        <div class="mydiv2"><b id="b1">New password:</b> <input type="password" id="txtNewPassword" placeholder=" Enter password" name="pass" class="inputtext2"></div>
+        <div class="mydiv5"><b id="b2">Original password:</b><input type="password" placeholder=" Enter original password" class="inputtext1"></div> 
+        <div class="mydiv2"><b id="b1">New password:</b> <input type="password" id="txtNewPassword" placeholder=" Enter new password" name="pass" class="inputtext2"></div>
        <div class="mydiv3"> <b>Confrim password: </b><input type="password" id="txtConfirmPassword" placeholder=" Confirm Password" name="confpass" class="inputtext3"></div>
-       <div class="registrationFormAlert" style="color:green;" id="CheckPasswordMatch"></div>
+       <div class="registrationFormAlert" style="color:red;" id="CheckPasswordMatch"></div>
         <div class="mydiv4"><button type="submit" class="btn btn-primary" onclick="checkPasswordMatch1()">Change password</button></div>
   </div>
 </div>
@@ -296,7 +296,7 @@ $(".upload-button").on('click', function() {
       if (password != confirmPassword)
           $("#CheckPasswordMatch").html("Passwords does not match!");
       else
-          $("#CheckPasswordMatch").html("Passwords match.");
+          $("#CheckPasswordMatch").html("");
   }
   function checkPasswordMatch1() {
       var password = $("#txtNewPassword").val();
