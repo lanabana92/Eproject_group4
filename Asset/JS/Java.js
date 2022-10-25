@@ -28,9 +28,13 @@ var app = angular.module('myApp',['ngRoute'])
         .when("/Motor",{
             templateUrl:"motorcycle.html"
         })
+        .when("/Account",{
+            templateUrl:"Account.html"
+        })
         .when("/About",{
-            templateUrl:"contact.html"
+            templateUrl:"About.html"
         });
+        
     });
 
     app.controller("Ctr",function($scope,$http){
@@ -47,4 +51,42 @@ var app = angular.module('myApp',['ngRoute'])
         })            
     })
 
+    app.controller("Ctr2",function($scope){
+         $scope.motorType = "0";   
+         $scope.option= "0";
+         
+         $scope.year = $scope.option + " years";
+        if($scope.motorType == "60000"){
+            $scope.type = "Under 50cc"
+       } else if ($scope.motorType == "70000"){
+            $scope.type = "Above 50cc"
+       } else {
+            $scope.type = "Electric"
+       }
+    })
+
     
+    
+function myFunction(){
+    var un = document.forms["myForm"]["Uname"].value;
+    var pw = document.forms["myForm"]["Pass"].value;
+    var txt = "Student";
+    if(un=="Student" && pw=="12345678"){
+        window.location.href="#!Account";
+        document.getElementById("textlogo").value = txt;
+        document.getElementById("your-image").src="Asset/Img/avatar.png";
+    }else{
+        alert("UserName:Student\nPassword:12345678");
+    }
+	
+}
+    
+  
+$(document).ready(function(){
+    $(".btn").click(function(){
+        $("#myModal").modal('hide');
+        $('input:password').val('');
+        $('input:text11').val('');
+    }); 
+});
+

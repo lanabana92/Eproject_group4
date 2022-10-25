@@ -102,7 +102,18 @@
         
     } */
     
-   
+   .img5{
+    width: 50%;
+    border-radius: 50%;
+   }
+   #textlogo{
+    margin-top: 6px;
+    border: none;
+    font-size: 16pt;
+    outline: none;
+    background-color: transparent;
+    
+   }
     #dropdown-menu{
         margin-top: 10px;
     }
@@ -111,7 +122,7 @@
         width: 150px;
         height: auto;
         display: flex;
-        margin-right: 20px;
+        right: -100px;
         float: right;
         display: show;
         text-align: center;
@@ -152,7 +163,6 @@
         background-image: url(../img/Carbackground1.jpg);
         background-size: cover;
     }
-  
     .quoteBox{
         
     
@@ -336,6 +346,7 @@
     padding: 10px;
 
    }
+   
    .colum1{
     text-align: center;
    }
@@ -370,4 +381,75 @@
     box-shadow: 0px 0px 10px 2px;
 
    }
-   
+    /* Lognin */
+    html {
+        height: 100%;
+      }
+      body {
+       
+        padding:0;
+        font-family: sans-serif;
+        
+      }
+      
+      .login-box {
+        position: absolute;
+        left: 50%;
+        margin-top: 250px;
+        width: 500px;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        background: rgba(51, 46, 46, 0.5);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0,0,0,.6);
+        border-radius: 10px;
+      }
+      
+      .login-box h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+        font-size: 30pt;
+      }
+      
+      .login-box .user-box {
+        position: relative;
+        outline: none;
+        background: transparent;
+      }
+      
+      .login-box .user-box input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+        
+      }
+
+      .login-box .user-box label {
+        position: absolute;
+        top:0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: rgb(240, 233, 233);
+        pointer-events: none;
+        transition: .5s;
+      }
+      
+      .login-box .user-box input:focus ~ label,
+      .login-box .user-box input:valid ~ label {
+        top: -30px;
+        left: 0;
+        color: #03e9f4;
+        font-size: 14px;
+      }
+      
+      
+      
