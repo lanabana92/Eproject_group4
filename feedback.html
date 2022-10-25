@@ -356,11 +356,13 @@
                 <div class="grid-container">
         
                     <div class="grid-item1">
-                        <div class="myDiv">            
+                        <div class="myDiv"> 
+                                       
                             <div class="comment">
                                 <div id="comment">
-            
+                                    
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -445,10 +447,10 @@
         </div>
     </div>
     
-    
+    <img src="" alt="">
     <script>
-        addComment("Davichi01", "0123456789", "The school has a small area, the whole school has less than 10 classes for all 3 levels", "5");
-        addComment("Davichi02", "0123456788", "After completing grade 12, students have both a High School Diploma and an Intermediate Vocational Training Diploma jointly trained by Saigon General TC School.", "3");
+        addComment("Davichi01", "0123456789", "Your service is very good", "5");
+        addComment("Davichi02", "0123456788", "Your service is very good", "3");
 
         function kiemtra() {
               var star = document.querySelector('input[name="rate"]:checked').value;
@@ -459,6 +461,7 @@
               var sPhone = document.getElementById("txtphone").value;
               var rePhone = /^\d{8,12}$/
               var reMail = /^\w+[@]\w+[.]\w+$/;
+              
               
               if(sName == ""){
                 alert("Full name field can't left blank!")
@@ -483,11 +486,12 @@
                  
                   addComment(sName, sPhone, sMess, star);
             }
-
+            
             function addComment(name, phone, mess, rating) {
-                strHTML = '<div><div class="div7"><span class="txtname">' + name + '</span></div>';
+                
+                strHTML ='<div><div class="div7"><i class="fa fa-user" style="font-size:28px"></i> <span class="txtname">' + name + '</span></div>';
                 strHTML += getHTMLRating(rating);
-               strHTML += '<br>' + '<div class="div10"><span class="txtMessage">' + mess + '</span></div></div>';
+                strHTML += '<br>' + '<div class="div10"><span class="txtMessage">' + mess + '</span></div></div>';
                 var tmp = document.createElement('div');
                 tmp.innerHTML = strHTML;
                 document.getElementById("comment").appendChild(tmp.firstChild);
