@@ -52,7 +52,11 @@ var app = angular.module('myApp',['ngRoute'])
     })
 
     
+    app.controller("Ctr3",function($scope){
+        $scope.uname = "Student";
+        $scope.pass = "12345678";
 
+    })
     app.controller("Ctr2",function($scope){
          $scope.motorType = "0";   
          $scope.option= "0";      
