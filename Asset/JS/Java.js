@@ -53,7 +53,7 @@ var app = angular.module('myApp',['ngRoute'])
 
     
     app.controller("Ctr3",function($scope){
-        $scope.uname = "Student";
+        $scope.uname = "Admin";
         $scope.pass = "12345678";
 
     })
@@ -78,13 +78,13 @@ var app = angular.module('myApp',['ngRoute'])
 function myFunction(){
     var un = document.forms["myForm"]["Uname"].value;
     var pw = document.forms["myForm"]["Pass"].value;
-    var txt = "Student";
-    if(un=="Student" && pw=="12345678"){
+    var txt = "User";
+    if(un=="Admin" && pw=="12345678"){
         window.location.href="#!Account";
         document.getElementById("textlogo").value = txt;
         document.getElementById("your-image").src="Asset/Img/avatar.png";
     }else{
-        alert("UserName:Student\nPassword:12345678");
+        alert("UserName:Admin\nPassword:12345678");
     }
 	
 }
