@@ -242,7 +242,7 @@
             margin-top: 50px;
             height: 700px;
             width: 500px ;
-            background-color: #FFFFFF;
+            background-color: #ffffff;
             border-radius: 20px;
             box-shadow: 0px 0px 10px 2px;
         }
@@ -294,6 +294,7 @@
             border: 0px;
     }
     .checkarrow{
+        margin-top: 5px;
         float: right;
         margin-right: 20px;
         
@@ -341,82 +342,85 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="paymentSheet">
-                        <div>
-                            <h3 style="margin-bottom:20px;margin-left: 10px;">Card Detail</h3>
-                            <p style="margin-left:10px">Card type</p>
-                            
-                            <div class="cardType">
-                                <div class="mdc-list-item"><img src="./Asset/img/Visa.png" width="130px" alt=""></div>
-                                <div class="mdc-list-item"><img src="./Asset/img/mastercard.png" width="130px" alt=""></div>
-                                <div class="mdc-list-item"><img src="./Asset/img/Amex.png" width="130px"alt=""></div>
-                            </div>
-                            <div class="cardInfo1">
-                                <table style="width:100%;" >
-                                    <tr>
-                                        <td colspan="2">
-                                            <div >
-                                                Name on card
-                                                <input type="text" class="motorSelector2 supInput">
-                                            </div>                                            
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td  colspan="2">
-                                            <div style="margin-top:20px;">
-                                            Card number
-                                            <input type="text" class="motorSelector2 supInput">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width:50%">
-                                            <div style="margin-top:20px;">
-                                                Expiration date
-                                                <input type="text" class="motorSelector2 supInput">
-                                            </div>
-                                        </td>                                            
-                                        <td>
-                                            <div style="margin-top:20px; ">
-                                                CVV
-                                                <input type="text" class="motorSelector2 supInput">
-                                            </div>
-                                        </td>
-                                    </tr> 
-                                    <tr>
-                                        <td colspan="2"><hr style="margin-top:30px"></td>
-                                    </tr>
-                                    <tr>
-                                        
-                                            <td>Order</td>
-                                            <td style="text-align: right"><input style="text-align: right; margin-top: 10px; " class="motorSelector11" type="text" id="value2" readonly></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr>
-                                        
-                                            <td>Tax</td>
-                                            <td style="text-align: right"><input style="text-align: right; margin-top: 10px; " class="motorSelector11" type="text" id="value3" readonly></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                       
-                                        <td>Total</td>
-                                        <td style="text-align: right"><input style="text-align: right; margin-top: 10px; " class="motorSelector11" type="text" id="value4" readonly></td>
-                                       
-                                    </tr>            
-                                    <tr>
-                                        <td colspan="2">
-                                            <button class="checkout"  id=""> <input  class="motorSelector11" style="color:white ;" type="text" id="value5" readonly> Check out <i class="bi bi-arrow-right checkarrow"></i></button>
-
-                                        </td>
-                                    </tr>                       
-                                </table>
+                    <form action="#">
+                        <div class="paymentSheet">
+                            <div>
+                                <h3 style="margin-bottom:20px;margin-left: 10px;">Card Detail</h3>
+                                <p style="margin-left:10px">Card type</p>
                                 
-                                
+                                <div class="cardType">
+                                    <div class="mdc-list-item"><img src="./Asset/img/Visa.png" width="130px" alt=""></div>
+                                    <div class="mdc-list-item"><img src="./Asset/img/mastercard.png" width="130px" alt=""></div>
+                                    <div class="mdc-list-item"><img src="./Asset/img/Amex.png" width="130px"alt=""></div>
+                                </div>
+                                <div class="cardInfo1">
+                                    <table style="width:100%;" >
+                                        <tr>
+                                            <td colspan="2">
+                                                <div >
+                                                    Name on card
+                                                    <input type="text" class="motorSelector2 supInput">
+                                                </div>                                            
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td  colspan="2">
+                                                <div style="margin-top:20px;">
+                                                Card number
+                                                <input type="text" class="motorSelector2 supInput">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:50%">
+                                                <div style="margin-top:20px;">
+                                                    Expiration date
+                                                    <input type="text" class="motorSelector2 supInput">
+                                                </div>
+                                            </td>                                            
+                                            <td>
+                                                <div style="margin-top:20px; ">
+                                                    CVV
+                                                    <input type="text" class="motorSelector2 supInput">
+                                                </div>
+                                            </td>
+                                        </tr> 
+                                        <tr>
+                                            <td colspan="2"><hr style="margin-top:30px"></td>
+                                        </tr>
+                                        <tr>
+                                            
+                                                <td>Order</td>
+                                                <td style="text-align: right"><input style="text-align: right; margin-top: 10px; " class="motorSelector11" type="text" id="value2" readonly></td>
+                                           
+                                            
+                                        </tr>
+                                        <tr>
+                                            
+                                                <td>Tax</td>
+                                                <td style="text-align: right"><input style="text-align: right; margin-top: 10px; " class="motorSelector11" type="text" id="value3" readonly></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                           
+                                            <td>Total</td>
+                                            <td style="text-align: right"><input style="text-align: right; margin-top: 10px; " class="motorSelector11" type="text" id="value4" readonly></td>
+                                           
+                                        </tr>            
+                                        <tr>
+                                            <td colspan="2">
+                                                <button class="checkout"  id=""> <input  class="motorSelector11" style="color:white ;" type="text" id="value5" class="checkout" readonly> Check out <i class="fa-solid fa-arrow-right checkarrow"></i> </button>
+    
+                                            </td>
+                                        </tr>                       
+                                    </table>
+                                    
+                                    
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
+                    
                 </div>
             </div>
         </div>
@@ -431,8 +435,8 @@
                     <table>
                         <tr>
                             <td style="width: 50%;">
-                                <select onclick="discheck()" name="motortype" class="motorSelector1" id="motortype" ng-model="motorType">
-                                    <option value="0" selected> choose vehicle type</option>
+                                <select name="motortype" class="motorSelector1" id="motortype" name="motorType" ng-model="motorType">
+                                    <option value="0"> choose vehicle type</option>
                                     <option value="60000" >Under 50cc</option>
                                     <option value="70000">Above 50cc</option>
                                     <option value="50000">Electric bike</option>
@@ -441,9 +445,9 @@
                             </td>
                             <td>
                                 
-                                <select class="motorSelector1" id="nbDays" ng-model="option">
-                                    <option value="0" selected >choose insurance plans</option>
-                                    <option value="3"  >Insurance for 3 years</option>
+                                <select class="motorSelector1" id="nbDays" name="option" ng-model="option">
+                                    <option value="0">choose insurance plans</option>
+                                    <option value="3">Insurance for 3 years</option>
                                     <option value="2">Insurance for 2 years</option>
                                     <option value="1">Insurance for 1 years</option>
                                 </select>
@@ -467,7 +471,7 @@
                             <td colspan="2"> <div class="motorSelector4"><input style="text-align: center; color: #ffff;" class="motorSelector3" type="text" id="value" readonly></div> </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><button type="button" class="MotorBut1" id="next1" ng-click="Add()">Next</button></td>
+                            <td colspan="2"><button type="button" class="MotorBut1" id="next1" ng-click="add()">Next</button></td>
                         </tr>
                     </table>
                 </form>
@@ -485,7 +489,7 @@
                             </td>
                             <td>
                                 <div class="motorSelector2">
-                                    <input class="input_text1" placeholder="Contact number" type="text" name="clientPhone" ng-model="clientPhone" required pattern="\d{11}"> <br>
+                                    <input class="input_text1" placeholder="Contact number" type="text" name="clientPhone" ng-model="clientPhone" required pattern="\d{10}"> <br>
                                     
                                 </div>
                             </td>
@@ -515,7 +519,7 @@
                         </tr>
                         <tr>
                             <td style="width: 50%; text-align: left; padding-left: 20px;">Payment method: </td>
-                            <td><span class="error" style="color: red;" ng-show="myForm.clientPhone.$dirty && myForm.clientPhone.$error.pattern">Invalid Phone number</span>
+                            <td><span class="error" style="color: red;" ng-show="myForm.clientPhone.$dirty && myForm.clientPhone.$error.pattern">Phone number is 10 number</span>
                                 <span class="error" style="color: red;" ng-show="myForm.clientEmail.$dirty && myForm.clientEmail.$error.pattern">Invalid email</span>
                                 <span class="error" style="color: red;" ng-show="myForm.clientName.$dirty && myForm.clientName.$error.required">Full name is required</span>
                                 <span class="error" style="color: red;" ng-show="myForm.clientCity.$dirty && myForm.clientCity.$error.required">City is required</span>
@@ -564,7 +568,7 @@
                         <b>Only 66.000 VND/year</b></p>
                         <p class="fee" style="margin-left:20px; display:none;">
                             <b>Fee will change depend on Vehicle</b></p>
-                        <button class="nexti" id="fee"><i class="bi bi-chevron-right "></i></button>
+                        <button class="nexti" id="fee"><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </td>
                 <td style="width:33.33%;">
@@ -574,7 +578,7 @@
                             <b>up to 150 Million VND</b></p>
                             <p class="compen" style="margin-left:20px; display: none;">
                                 <b>For person: 150mil VND and for vehicle 50mil VND </b></p>
-                            <button class="nexti" id="CompenB"><i class="bi bi-chevron-right "></i></button>
+                            <button class="nexti" id="CompenB"><i class="fa-solid fa-chevron-right"></i></button>
                             
                     </div>
                 </td>
@@ -585,33 +589,33 @@
                             <b>Online</b></p>
                         <p class="pay" style="margin-left:20px; display: none;">
                             <b>receive electronic insurance </b></p>
-                            <button class="nexti" id="paybutton"><i class="bi bi-chevron-right "></i></button>
+                            <button class="nexti" id="paybutton"><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </td>
             </tr>
         </table>
         
     </div>
-    <!-- responsive protion -->
+    <!-- responsive promotion -->
     <div class="myPromotion2">
         <div class="promoBox">
             <img src="./Asset/img/dollaricon.webp" alt="">
             <p style="margin-left:20px">Sale off:  <br>
             <b>Only 66.000 VND/year</b></p>
-            <button class="nexti"><i class="bi bi-chevron-right "></i></button>
+            <button class="nexti"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
         <div class="promoBox">
             <img src="./Asset/img/crown icon.webp" alt="">
             <p style="margin-left:20px">Compensation:  <br>
                 <b>up to 150 Million VND</b></p>
-                <button class="nexti"><i class="bi bi-chevron-right "></i></button>
+                <button class="nexti"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
         <div class="promoBox">
             <img src="./Asset/img/card icon.webp" alt="">
             <p id="pay" style="margin-left:20px">Payment Method:  <br>
                 <b>Online</b>
             </p>
-                <button class="nexti" id="paybutton"><i class="bi bi-chevron-right"></i></button>
+                <button class="nexti" id="paybutton"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
         
     </div>        
@@ -719,11 +723,8 @@
    
 </div>
 <script>
-$('.mdc-list-item').on("click",function(){
-    var isClicked = $(this).hasClass("list-item-clicked"); // am I clicked?
-    $('.mdc-list-item').removeClass("list-item-clicked");  // un-click everything
-    if(!isClicked)
-        $(this).toggleClass("list-item-clicked"); // click me if needed
+$('.checkout').on("click", function () {  
+    alert('Payment success !!!');
 })
 
 $(document).ready(function(){
@@ -771,6 +772,13 @@ $(document).ready(function(){
     $(".compen").toggle();
     });
     });
+
+    $('.mdc-list-item').on("click",function(){
+    var isClicked = $(this).hasClass("list-item-clicked"); // am I clicked?
+    $('.mdc-list-item').removeClass("list-item-clicked");  // un-click everything
+    if(!isClicked)
+        $(this).toggleClass("list-item-clicked"); // click me if needed
+})
 
     $(document).on('change', "#startDate", function (e) {
     e.preventDefault();

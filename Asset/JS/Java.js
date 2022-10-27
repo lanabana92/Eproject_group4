@@ -53,9 +53,9 @@ var app = angular.module('myApp',['ngRoute'])
 
     app.controller("Ctr2",function($scope){
          $scope.motorType = "0";   
-         $scope.option= "0";
-         
-         $scope.year = $scope.option + " years";
+         $scope.option= "0";      
+         $scope.add = function(){
+            $scope.year = $scope.option + " years";
         if($scope.motorType == "60000"){
             $scope.type = "Under 50cc"
        } else if ($scope.motorType == "70000"){
@@ -63,6 +63,8 @@ var app = angular.module('myApp',['ngRoute'])
        } else {
             $scope.type = "Electric"
        }
+         }
+         
     })
 
     

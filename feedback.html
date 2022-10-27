@@ -1,60 +1,4 @@
 
-    <script>
-        function kiemtra() {
-              var star = document.querySelector('input[name="rate"]:checked').value;
-              var sMess = document.getElementById("txtmess").value;
-              var sName = document.getElementById("txtname").value;
-              var sMail = document.getElementById("txtmail").value;
-              var sAge = document.getElementById("txtage").value;
-              var sPhone = document.getElementById("txtphone").value;
-              var rePhone = /^\d{8,12}$/
-              var reMail = /^\w+[@]\w+[.]\w+[.]\w+$/;
-              
-              if(sName == ""){
-                alert("Full name field can't left blank!")
-                return false;
-              }
-             
-              if(sAge == ""){
-                alert("Address field can't left blank!")
-                return false;
-              }
-              if(!reMail.test(sMail)){
-                alert("Mail field can't left blank!");
-                document.getElementById("txtmail")
-                return false;
-                }
-              
-                if(!rePhone.test(sPhone)){
-                  alert("Phone field can't left blank!");
-                  document.getElementById("txtphone")
-                  return false;
-                  }
-                 
-                binhluan();
-            }
-           function binhluan() {
-            var obj = {
-                table: []
-             };
-            var fs = require('fs');
-            console.log(fs);
-            fs.readFile('comments.json', 'utf8', function readFileCallback(err, data){
-                if (err){
-                    throw err;
-                } else {
-                    obj = JSON.parse(data); 
-                    obj.table.push({
-                        "name": document.getElementById("txtname").value,
-                        "age":document.getElementById("txtage").value, 
-                        "ratting": document.querySelector('input[name="rate"]:checked').value, 
-                        "comment": document.getElementById("txtmess").value}); 
-                    json = JSON.stringify(obj); 
-                    fs.writeFile('comments.json', json, 'utf8', callback);
-                }
-            });
-        }
-    </script>
     <style>
         .rate{
             float: left;
@@ -485,6 +429,15 @@
                   }
                  
                   addComment(sName, sPhone, sMess, star);
+                  
+                document.querySelector('input[name="rate"]:checked').value="0";
+                document.getElementById("txtmess").value="";
+                document.getElementById("txtname").value="";
+                document.getElementById("txtmail").value="";
+                document.getElementById("txtage").value="";
+                document.getElementById("txtphone").value="";
+                
+                
             }
             
             function addComment(name, phone, mess, rating) {
@@ -496,6 +449,7 @@
                 tmp.innerHTML = strHTML;
                 document.getElementById("comment").appendChild(tmp.firstChild);
             }
+            
 
             function getHTMLRating(rating) {
                 strRating = '<div class="rateComment">';
