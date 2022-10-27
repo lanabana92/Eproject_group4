@@ -36,7 +36,106 @@ var app = angular.module('myApp',['ngRoute'])
         });
         
     });
-    
+    app.controller('Ctr4', function($scope) {
+        $scope.brands = ["Honda", "Toyota", "Ford", "Mitsubisi", "Mazda"];
+        $scope.chooseBrand = function(){
+            if($scope.SelectBrand =="Honda"){
+               $scope.names =  ["CRV"];
+            } else if ($scope.SelectBrand =="Toyota"){
+                $scope.names =  ["Avanza", "Fortuner", "Land Cruiser", "Inova"];
+            }else if ($scope.SelectBrand =="Ford"){
+                $scope.names =  ["Everest", "Territory"];
+            }else if ($scope.SelectBrand =="Mitsubisi"){
+                $scope.names =  ["XFC","Xpander","Pajero","Outlander"];
+            }else if ($scope.SelectBrand =="Mazda"){
+                $scope.names =  ["CX8"];
+            }          
+        }
+        $scope.calculate = function(){
+           if($scope.SelectOption == "option2"){
+                $scope.total = $scope.price * 0.012;
+            }
+            else if($scope.SelectOption == "option3"){
+                $scope.total = $scope.price * 0.013;
+            }
+            else if($scope.SelectOption == "option4"){
+                $scope.total = $scope.price * 0.014;
+            }
+            else if($scope.SelectOption == "option5"){
+                $scope.total = $scope.price * 0.015;
+            } else{
+                $scope.total = $scope.price * 0.01;
+            }
+        }
+        $scope.citys = ["Ho Chi Minh", "Hanoi", "Binh Duong", "Can Tho", "Hai Phong"];
+    });
+
+    app.controller('Ctr5', function($scope) {
+        $scope.brands = ["Honda", "Toyota", "Ford", "Mitsubisi", "Mazda"];
+        $scope.chooseBrand = function(){
+            if($scope.SelectBrand =="Honda"){
+               $scope.names =  ["Civic", "City", "HRV", "Brio", "Accord"];
+            } else if ($scope.SelectBrand =="Toyota"){
+                $scope.names =  ["Vios", "Altis", "Cross", "Camry", "Yaris"];
+            }else if ($scope.SelectBrand =="Ford"){
+                $scope.names =  ["Focus", "EcoSport"];
+            }else if ($scope.SelectBrand =="Mitsubisi"){
+                $scope.names =  ["Attrage"];
+            }else if ($scope.SelectBrand =="Mazda"){
+                $scope.names =  ["Mazda 2", "Mazda 3","CX5", "Mazda 6", "CX30"];
+            }           
+        }
+        $scope.calculate = function(){
+            if($scope.SelectOption == "option2"){
+                 $scope.total = $scope.price * 0.012;
+             }
+             else if($scope.SelectOption == "option3"){
+                 $scope.total = $scope.price * 0.013;
+             }
+             else if($scope.SelectOption == "option4"){
+                 $scope.total = $scope.price * 0.014;
+             }
+             else if($scope.SelectOption == "option5"){
+                 $scope.total = $scope.price * 0.015;
+             } else{
+                 $scope.total = $scope.price * 0.01;
+             }
+         }
+        $scope.citys = ["Ho Chi Minh", "Hanoi", "Binh Duong", "Can Tho", "Hai Phong"];
+    });
+
+    app.controller('Ctr6', function($scope) {
+        $scope.brands = ["Audi", "Mercedes", "Vovlo", "BMW", "RR"];
+        $scope.chooseBrand = function(){
+            if($scope.SelectBrand =="Audi"){
+               $scope.names =  ["A4", "A6", "A7", "A8", "Q2", "Q3", "Q5", "Q7", "Q8"];
+            } else if ($scope.SelectBrand =="Mercedes"){
+                $scope.names =  ["G-CLASS","A-CLASS","E-CLASS","C-CLASS", "GLS", "MayBack", "GLB", "GLC"];
+            }else if ($scope.SelectBrand =="Volvo"){
+                $scope.names =  ["S60", "S90", "V90", "CX40", "V60", "Recharge"];
+            }else if ($scope.SelectBrand =="BMW"){
+                $scope.names =  ["Serie4", "Serie5","Serie7" ,"X7","X6","X4"];
+            }          
+        }
+        $scope.calculate = function(){
+            if($scope.SelectOption == "option2"){
+                 $scope.total = $scope.price * 0.012;
+             }
+             else if($scope.SelectOption == "option3"){
+                 $scope.total = $scope.price * 0.013;
+             }
+             else if($scope.SelectOption == "option4"){
+                 $scope.total = $scope.price * 0.014;
+             }
+             else if($scope.SelectOption == "option5"){
+                 $scope.total = $scope.price * 0.015;
+             } else{
+                 $scope.total = $scope.price * 0.01;
+             }
+         }
+        $scope.citys = ["Ho Chi Minh", "Hanoi", "Binh Duong", "Can Tho", "Hai Phong"];
+    });
+
     app.controller("Ctr",function($scope,$http){
         $http.get("data.json").then(function(response){
             $scope.car1 = response.data.menu1;
