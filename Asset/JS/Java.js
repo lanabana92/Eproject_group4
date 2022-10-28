@@ -181,7 +181,7 @@ function myFunction(){
     if(un=="Admin" && pw=="12345678"){
         window.location.href="#!Account";
         document.getElementById("textlogo").value = txt;
-        document.getElementById("your-image").src="Asset/Img/avatar.png";
+        document.getElementById("your-image").src="./Asset/Img/avatar.png";
     }else{
         alert("UserName:Admin\nPassword:12345678");
     }
