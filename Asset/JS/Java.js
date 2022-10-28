@@ -36,8 +36,6 @@ var app = angular.module('myApp',['ngRoute'])
         });
         
     });
-<<<<<<< HEAD
-=======
     app.controller('Ctr4', function($scope) {
         $scope.brands = ["Honda", "Toyota", "Ford", "Mitsubisi", "Mazda"];
         $scope.chooseBrand = function(){
@@ -137,7 +135,6 @@ var app = angular.module('myApp',['ngRoute'])
          }
         $scope.citys = ["Ho Chi Minh", "Hanoi", "Binh Duong", "Can Tho", "Hai Phong"];
     });
->>>>>>> f02e61995c4b3af63d423d55c2a853593ab68e82
 
     app.controller("Ctr",function($scope,$http){
         $http.get("data.json").then(function(response){
@@ -153,13 +150,6 @@ var app = angular.module('myApp',['ngRoute'])
         })            
     })
 
-<<<<<<< HEAD
-    app.controller("Ctr2",function($scope){
-         $scope.motorType = "0";   
-         $scope.option= "0";
-         
-         $scope.year = $scope.option + " years";
-=======
     
     app.controller("Ctr3",function($scope){
         $scope.uname = "Admin";
@@ -171,7 +161,6 @@ var app = angular.module('myApp',['ngRoute'])
          $scope.option= "0";      
          $scope.add = function(){
             $scope.year = $scope.option + " years";
->>>>>>> f02e61995c4b3af63d423d55c2a853593ab68e82
         if($scope.motorType == "60000"){
             $scope.type = "Under 50cc"
        } else if ($scope.motorType == "70000"){
@@ -179,11 +168,8 @@ var app = angular.module('myApp',['ngRoute'])
        } else {
             $scope.type = "Electric"
        }
-<<<<<<< HEAD
-=======
          }
          
->>>>>>> f02e61995c4b3af63d423d55c2a853593ab68e82
     })
 
     
