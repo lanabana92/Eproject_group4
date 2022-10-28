@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Safe carz insurance</title>
+    <link rel="icon" href="./Asset/img/safe car insurance.png" type="image/icon type">
     <link rel="stylesheet" href="./Asset/CSS/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -75,7 +75,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="myList" href="#!About">Abous us</a>
+                    <a class="myList" href="#!About">About us</a>
                 </li>
                 <li class="nav-item">
                     <a class="myList" href="#!Feedback">Feedback</a>
@@ -92,7 +92,7 @@
        <!-- logn in -->
         
 <!-- The Modal -->
-<div class="modal fade " id="myModal">
+<div class="modal fade " id="myModal" ng-controller="Ctr3">
     <div class="modal-dialog">
       <div class="modal-content">
   
@@ -100,11 +100,19 @@
     <h2>Login</h2>
     <form name="myForm">
       <div class="user-box">
+<<<<<<< HEAD
         <input type="text" value="Student" name="Uname" required >
         <label>Username</label>
       </div>
       <div class="user-box">
         <input type="password" value="12345678" name="Pass" required>
+=======
+        <input type="text"  name="Uname" ng-model="uname" required >
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="password" name="Pass" ng-model="pass" required>
+>>>>>>> f02e61995c4b3af63d423d55c2a853593ab68e82
         <label>Password</label>
       </div>
         
@@ -129,19 +137,20 @@
         </div>
         <div class="col-md-3">
             <h3>Product</h3> <br>
-                    <a href="">Insurance for Luxury Car </a> <br><br>
-                    <a href="">Electric bike insurance </a> <br><br>
-                    <a href="">Insurance for Occupant</a> <br><br>
-                    <a href="">Under 50cc</a> <br><br>
-                    <a href="">Above 50cc</a> <br><br>
-                    <a href="">Under 9 seater</a> <br> 
+                    <a href="#!LuxuryCar">Insurance for Luxury Car </a> <br><br>
+                    <a href="#!Motor">Motorcycle </a> <br><br>
+                    
+                    
+                    <a href="#!Car2">above 9 seater</a> <br><br>
+                    <a href="#!Car">Under 9 seater</a> <br> 
                     
         </div>
         <div class="col-md-2">
             <h3>Explore</h3> <br> 
-                   <a href="">HSBC</a>  <br><br>
-                    <a href="">PTI</a>  <br><br>
-                    <a href="">About us</a>
+                   <a href="#!hsbc">HSBC</a>  <br><br>
+                    <a href="#!PTI">PTI</a>  <br><br>
+                    <a href="#!About">About us</a><br><br>
+                    <a href="#!Feedback">Feedback</a>
         </div>
         <div class="col-md-3">
             <h3>Office Location </h3>  <br>

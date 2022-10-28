@@ -1,41 +1,149 @@
+<script>
+    $(document).ready(function(){
+        $("#getQuote").click(function(){
+            $("#quoteCon").toggle();
+    });
+    });
 
+    $(document).on('click', "#getQuote", function (e) {
+        e.preventDefault();
+        var price= $("#total").val();
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'VND',
+            });
+        $("#total").val(formatter.format(price))
+    });
+</script>
+<style>
+.quoteCon{
+    width: 100%;
+    height: 1000px;
+    background-color:rgba(0, 0, 0, 0.8);
+    position: fixed;
+    
+    display: none;
+}
+.quoteContent{
+    margin: auto;
+    width: 450px;
+    height: 500px;
+    background-color: white;
+}
+.quoteContent table{
+    width: 100%;
+    margin: 10px;
+    
+}
+.quoteContent td{
+    padding: 15px 20px ;
+    
+}
+.quoteContent p{
+    font-size: 12px;
+    
+}
 
-<div id="carQuoteContent2" class="container-fluid">
+.inputText{
+ border-top: 0;
+ border-left: 0;
+ border-right:0;
+ width: 90%;
+}
+.inputText2{
+    width: 95%;
+}
+.quoteContent button{
+    width: 120px;
+    margin: auto;
+}
+</style>
+
+<div id="carQuoteContent2" class="container-fluid" ng-controller="Ctr4">
+    <!-- quote -->
+    <div class="quoteCon" id="quoteCon">
+       
+        <div class="quoteContent">
+            <form action="#">
+                <table>
+                    <tr>
+                        <td colspan="2"><b>Invest Terms</b><br>
+                        <p>When the invest duration change, the interest is recalculated</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Brand:
+                            <input class="inputText" type="text" ng-model="SelectBrand" disabled>
+                        </td>
+                        <td>
+                            Name:
+                            <input class="inputText" type="text" name="" id="" ng-model="SelectName" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Usage years:
+                            <input class="inputText" type="text" ng-model="selectedYear" disabled>
+                        </td>
+                        <td>
+                            Values:
+                            <input class="inputText" type="text" name="" id="" ng-model="price" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Register City:
+                            <input class="inputText" type="text" ng-model="SelectCity" disabled>
+                        </td>
+                        <td>
+                            Insurance Plans:
+                            <input class="inputText" type="text" ng-model="SelectOption" disabled>
+                        </td>
+                        <tr>
+                            <td colspan="2">Total <br> <input class="inputText inputText2" type="text" ng-model="total" id="total" disabled></td>
+                        </tr>
+                    </tr>
+                </table>
+                <div style="width:100%; display: flex; margin-top: 30px;">
+                    <button class="btn btn-primary mySubmit" type="submit">Contact us</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- customer input information -->
     <div class="row outer">
         <div class="col-md-2 "></div>
         <table class="col-md-8 d-flex justify-content-center myTable1 ">            
             <tr>
                 <td>
                     <div class="quoteBox2">
-                            <form action="home.html"></form>
-                                <h2>Get your quote</h2>
-                                <p class="text">Above 9 seaters</p>
-                            <hr>
+                        <form action="#">
+                            <h2>Get your quote</h2>
+                            <p class="text">Under 9 seater</p>
+                            
                             <label for="">Brand</label><br>
-                            <select name="" class="mySelector1">
+                            <select name="" id="brand" class="mySelector1" ng-change="chooseBrand()" ng-model="SelectBrand" ng-options="brand for brand in brands">
                                 <option value="">Choose your car brand</option>
                             </select><br><br>
-                            <label for="">Name</label>gi<br>
-                            <select name="" class="mySelector1">
+                            <label for="">Name</label><br>
+                            <select name="" class="mySelector1"  ng-model="SelectName" ng-options="name for name in names" >
                                 <option value="">Choose your car name</option>
                             </select><br><br>
                             <label for="">Usage year</label><br>
-                            <select name="" class="mySelector2" ng-model="selectedName" ng-options="i for i in [1,2,3,4,5]"></select><br><br>
+                            <select name="" class="mySelector2" ng-model="selectedYear" ng-options="i for i in [1,2,3,4,5]"></select><br><br>
                             <label for="">Register City</label><br>
-                            <select name="" class="mySelector1">
+                            <select name="" class="mySelector1" ng-model="SelectCity" ng-options="city for city in citys">
                                 <option value="">Choose register city</option>
                             </select><br><br>
-                            <label for="">Value</label><br>
-                            <input type="text" class="mySelector1"><br><br>
+                            <label for="" >Value</label><br>
+                            <input type="text" class="mySelector1" ng-model="price" id="price"><br><br>
                             <label for="">Insurance plans</label><br>
-                            <select name="" class="mySelector1">
+                            <select name="" class="mySelector1" ng-model="SelectOption" id="option" ng-options="option for option in ['option1','option2','option3','option4','option5']">
                                 <option value="">Choose insurance plan</option>
                             </select>
                             <div class="button1 ">
-                                <button type="submit" class="btn btn-primary mySubmit1">Submit</button>
+                                <button type="button" id="getQuote" class="btn btn-primary mySubmit1" ng-click="calculate()">Submit</button>
                             </div>
-                            
-                        </form>
+                        
+                    </form>
                     </div>
                 </td>
                 <td>

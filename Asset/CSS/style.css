@@ -162,6 +162,7 @@
     
         background-image: url(../img/Carbackground1.jpg);
         background-size: cover;
+        padding: 0;
     }
     .quoteBox{
         
@@ -225,6 +226,7 @@
     
         background-image: url(../img/ford.jpg);
         background-size: cover;
+        padding: 0;
     }
     
     .quoteBox2{
@@ -253,6 +255,7 @@
     
         background-image: url(../img/RollroyceBackround.jpg);
         background-size: cover;
+        padding: 0;
     }
     
     .quoteBox3{
