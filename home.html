@@ -193,12 +193,12 @@
         }
         
         if(!rePhone.test(sPhone)){
-          alert("Phone field can't left blank!");
+          alert("Phone must be from 8 to 12 digits");
           document.getElementById("txtphone")
           return false;
           } 
         if(!reMail.test(sMail)){
-          alert("Mail field can't left blank!");
+          alert("Invalid email!");
           document.getElementById("txtmail")
           return false;
           }
@@ -213,12 +213,21 @@
           }
         var message = [];
                     message.push("+++++++++++++++++++++++++++++") ;
+                    message.push("Thank You Ms/Mr:") ;
                     message.push("Name: " + sName) ;
                     message.push("Phone: " + sPhone );
-                    message.push("Mail: " + sMail );
-                    message.push("Address: " + sAdd );
-                    message.push("Message: " + sMess );
+                    message.push("Email: " + sMail );
+                    message.push("--------------");
+                    message.push("We recieved your information with thank!");
+                    message.push("Our Sale team will contact you ASAP");
                     alert(message.join("\n"));
+
+        document.getElementById("txtmess27").value ="";
+        document.getElementById("txtname27").value ="";
+        document.getElementById("txtmail27").value ="";
+        document.getElementById("txtadd27").value ="";
+        document.getElementById("txtphone27").value ="";
+      
       }
   </script>
   <div class="all">
